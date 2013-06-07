@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" targetNamespace="http://lexsure.com/ns/Report/2013" xmlns:report="http://lexsure.com/ns/Report/2013">
+  <xs:element name="report-request">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="report:report-request-id"/>
+        <xs:element ref="report:firm-id"/>
+        <xs:element ref="report:firm-name"/>
+        <xs:element ref="report:risk-register"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="risk-register">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="report:report-date"/>
+        <xs:element ref="report:risk-register-rows"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="report-request-id" type="xs:string"/>
+  <xs:element name="firm-id" type="xs:string"/>
+  <xs:element name="firm-name" type="xs:string"/>
+  <xs:element name="report-date" type="xs:string"/>
+  <xs:element name="risk-register-rows">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="unbounded" ref="report:risk-register-row"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="risk-register-row">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="report:sra-risk-id"/>
+        <xs:element ref="report:date"/>
+        <xs:element ref="report:source-register"/>
+        <xs:element ref="report:practice-area"/>
+        <xs:element ref="report:trigger-event"/>
+        <xs:element ref="report:compliance-officer"/>
+        <xs:element minOccurs="0" ref="report:action-taken"/>
+        <xs:element minOccurs="0" ref="report:comments"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="sra-risk-id" type="xs:string"/>
+  <xs:element name="date" type="xs:date"/>
+  <xs:element name="source-register" type="xs:string"/>
+  <xs:element name="practice-area" type="xs:string"/>
+  <xs:element name="trigger-event" type="xs:string"/>
+  <xs:element name="compliance-officer" type="xs:string"/>
+  <xs:element name="action-taken" type="xs:string"/>
+  <xs:element name="comments" type="xs:string"/>
+</xs:schema>

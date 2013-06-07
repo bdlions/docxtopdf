@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<report-request xmlns="http://lexsure.com/ns/Report/2013">
+  <report-request-id>str 1234</report-request-id>
+  <firm-id>str 1234</firm-id>
+  <firm-name>str 1234</firm-name>
+  <risk-register>
+    <report-date>stringmustbehere</report-date>
+    <risk-register-rows>
+      <risk-register-row>
+        <sra-risk-id>str1234</sra-risk-id>
+        <date>2012-12-13</date>
+        <source-register>str 1234</source-register>
+        <practice-area>str 1234</practice-area>
+        <trigger-event>str 1234</trigger-event>
+        <compliance-officer>str 1234</compliance-officer>
+        <action-taken>str 1234</action-taken>
+        <comments>str 1234</comments>
+      </risk-register-row>
+
+<risk-register-row>
+        <sra-risk-id>str 1234</sra-risk-id>
+        <date>2012-12-13</date>
+        <source-register>str1234</source-register>
+        <practice-area>str1234</practice-area>
+        <trigger-event>str1234</trigger-event>
+        <compliance-officer>str1234</compliance-officer>
+        <action-taken>str1234</action-taken>
+        <comments>str1234</comments>
+      </risk-register-row>
+
+<risk-register-row>
+        <sra-risk-id>1234</sra-risk-id>
+        <date>2012-12-13</date>
+        <source-register>str1234</source-register>
+        <practice-area>str1234</practice-area>
+        <trigger-event>str1234</trigger-event>
+        <compliance-officer>str1234</compliance-officer>
+        <action-taken>str1234</action-taken>
+        <comments>My Comments List and All </comments>
+      </risk-register-row>
+
+    </risk-register-rows>
+  </risk-register>
+</report-request>

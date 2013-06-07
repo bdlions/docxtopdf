@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<report-request
+	xmlns="http://lexsure.com/ns/Report/2013">
+	<report-request-id>report-request-id</report-request-id>
+	<firm-id>firm-id</firm-id>
+	<firm-name>firm-name</firm-name>
+	<risk-register>
+		<report-date>report-date</report-date>
+		<risk-register-rows>
+			<risk-register-row>
+				<sra-risk-id>sra-risk-id1</sra-risk-id>
+				<date>2012-06-25</date>
+				<source-register>source-register</source-register>
+				<practice-area>practice-ardea</practice-area>
+				<trigger-event>trigger-evednt</trigger-event>
+				<compliance-officer>compliance-ffofficer</compliance-officer>
+				<action-taken>action-takenn</action-taken>
+				<comments>comments</comments>
+			</risk-register-row>
+			<risk-register-row>
+				<sra-risk-id>sra-risk-id2</sra-risk-id>
+				<date>2010-05-30</date>
+				<source-register>source-register</source-register>
+				<practice-area>practice-aread</practice-area>
+				<trigger-event>trigger-edvent</trigger-event>
+				<compliance-officer>compliance-dofficer</compliance-officer>
+				<action-taken>action-takedn</action-taken>
+				<comments>comments</comments>
+			</risk-register-row>
+		</risk-register-rows>
+	</risk-register>
+</report-request>

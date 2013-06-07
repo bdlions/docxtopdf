@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<catalog xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog" prefer="system">
+    <system systemId="http://www.pbs.org/rss/pbscontent/" uri="www.pbs.org/community/rss-directory/index"/>
+    <system systemId="http://search.yahoo.com/mrss/" uri="search.yahoo.com/web.fr_404_videosearch"/>
+    <system systemId="http://purl.org/dc/terms/" uri="dublincore.org/2012/06/14/dcterms"/>
+</catalog>

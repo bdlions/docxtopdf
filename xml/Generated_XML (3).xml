@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<report-request
+	xmlns="http://lexsure.com/ns/Report/2013">
+	<report-request-id>report-request3-id</report-request-id>
+	<firm-id>firm-id-test</firm-id>
+	<firm-name>firm-name-FullORPArtialNameWorks</firm-name>
+	<risk-register>
+		<report-date>report-date</report-date>
+		<risk-register-rows>
+			<risk-register-row>
+				<sra-risk-id>sra-risk-id1</sra-risk-id>
+				<date>2008-05-31</date>
+				<source-register>source-register2</source-register>
+				<practice-area>practice-area2</practice-area>
+				<trigger-event>trigger-event2</trigger-event>
+				<compliance-officer>compliance-officer2</compliance-officer>
+				<action-taken>action-taken2</action-taken>
+				<comments>comments</comments>
+			</risk-register-row>
+			<risk-register-row>
+				<sra-risk-id>sra-risk-id2</sra-risk-id>
+				<date>2013-05-31</date>
+				<source-register>source-registe1r</source-register>
+				<practice-area>practice-area1</practice-area>
+				<trigger-event>trigger-event1</trigger-event>
+				<compliance-officer>compliance-officer1</compliance-officer>
+				<action-taken>action-taken1</action-taken>
+				<comments>comments1</comments>
+			</risk-register-row>
+			<risk-register-row>
+				<sra-risk-id>sra-risk-id3</sra-risk-id>
+				<date>2035-05-31</date>
+				<source-register>source-register3</source-register>
+				<practice-area>practice-area3</practice-area>
+				<trigger-event>trigger-event3</trigger-event>
+				<compliance-officer>compliance-officer3</compliance-officer>
+				<action-taken>action-taken3</action-taken>
+				<comments>comments3</comments>
+			</risk-register-row>
+		</risk-register-rows>
+	</risk-register>
+</report-request>

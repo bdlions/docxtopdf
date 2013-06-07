@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+    <head>
+        
+        <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+        <meta http-equiv="content-language" content="en-us" />
+        <meta http-equiv="imagetoolbar" content="false" />
+        <meta name="robots" content="index,follow" />
+        <meta name="description" content=" " />
+        <meta name="keywords" content=" " />
+        <meta name="MSSmartTagsPreventParsing" content="true" />
+        <meta name="linkBack" content="http://www.pbs.org/">
+        
+
+        
+        <link rel="icon" type="image/png" href="http://www-tc.pbs.org/images/common/icons/browser_pbslogo16.png" />
+        
+
+        <title> RSS : PBS</title>
+
+        
+    <link rel="stylesheet" href="http://ec2-50-16-227-110.compute-1.amazonaws.com/media/pkg-pbs.css?1331629380" type="text/css" media="screen, projection">
+
+
+        
+        
+            <script type="text/javascript" src="http://ec2-50-16-227-110.compute-1.amazonaws.com/media/pkg-main.js?1331629379"></script>
+        
+        
+
+        <script type="text/javascript">
+            // Make some variables from the template context to JavaScript
+            var media_path = 'http://www-tc.pbs.org/s3/pbs.merlin.cdn.prod/media/';
+            var site_url = 'http://www.pbs.org/';
+        </script>
+       
+    </head>
+
+
+<body onload="">
+<div id="bento-bkgd">
+    
+    <div id="pbs-header" class="header-widget cleanslate">
+        <div class="pbs-wrap-left"><!-- --></div>
+        <div class="pbs-header-bg-wrap">
+            <div class="pbs-wrap">
+                <div class="pbs-logo"><a accesskey="1" href="http://www.pbs.org/">PBS - Be more</a></div>
+                <div class="header_search">
+                    <input id="search_input" type="text" class="search" />
+                    <!-- TODO remove the onfocus -->
+                    <img id="search_btn" class="search_btn" src="http://www-tc.pbs.org/s3/pbs.merlin.cdn.prod/media/images/btn_search.jpg" alt="Search"/>
+                </div>
+            </div>
+        </div>
+        <div class="pbs-wrap-right"><!-- --></div>
+         
+    </div>
+    <div id="pbs-navigation" class="main-navigation cleanslate">
+        <div class="wrap">
+            <ul>
+                <li class="topic-dropdown">
+                    <a accesskey="x" href="http://www.pbs.org/topics/" id="explore_topics_menu_item" title="Explore Topics" class="navigation_item">Explore Topics <span class="arrow"><!-- --></span></a>
+                    <div class="topic-wrap">
+                        <div class="top"><!-- --></div>
+                            <div class="center clearfix">
+
+                                <ol>
+                                    <li>
+                                         <a href="http://www.pbs.org/topics/arts-entertainment/">Arts &amp; Entertainment</a></li>
+                                    <li>
+                                        <a href="http://www.pbs.org/topics/culture-society/">Culture &amp; Society</a></li>
+                                    <li>
+                                        <a href="http://www.pbs.org/topics/health/">Health</a></li>
+                                    <li>
+                                        <a href="http://www.pbs.org/topics/history/">History</a></li>
+                                     <li class="last">
+                                        <a href="http://www.pbs.org/topics/how-to/">Home &amp; How-To</a></li>
+                                </ol>
+                                <ol class="last">
+                                    <li>
+                                        <a href="http://www.pbs.org/topics/news-politics/">News &amp; Public Affairs</a></li>
+                                    <li>
+                                        <a href="http://www.pbs.org/topics/parenting/">Parents</a></li>
+                                    <li>
+                                        <a href="http://www.pbs.org/topics/science-nature/">Science &amp; Nature</a></li>
+                                    <li>
+                                        <a href="http://www.pbs.org/topics/technology/">Technology</a></li>
+                                </ol>
+                            </div>
+                        <div class="bottom"><!-- --></div>
+                    </div>
+                </li>
+                <li><a accesskey="w" rel="external" href="http://video.pbs.org" target="_blank" title="Watch PBS Videos" class="navigation_item">Watch Video</a></li>
+                <li>
+                    <a accesskey="s" rel="external" href="http://www.pbs.org/tv_schedules/" title="PBS TV Schedules" class="navigation_item">TV Schedule</a>
+                </li>
+                <li><a accesskey="p" href="http://www.pbs.org/programs/" title="PBS Programs" class="navigation_item">PBS Programs</a></li>
+                <li>
+                    <a accesskey="b" rel="external" href="http://www.pbs.org/cgi-registry/sitemembershiplink.cgir" target="_blank" class="navigation_item" title="Donate">Donate</a>
+                </li>
+                 <li class="last"><a accesskey="o" rel="external" href="http://www.shoppbs.org/" target="_blank" class="navigation_item" title="Shop PBS">Shop PBS</a></li>
+                <li class="share">
+                    <a id="sharing-button" rel="popup" href="javascript:void(0);" title="Share PBS">Share</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    
+    
+<div id="pbs-main-content" class="container_24" style="padding-top:10px;">
+    <div class="grid_16 leftcol">
+        <div id="producer-page">
+      <div id="mp-title">
+        <a href="/community/"><div class="captionedPicture" style="width:646px;"><img alt="" src="http://ec2-50-16-227-110.compute-1.amazonaws.com/media/store/page-media/community/1/Community_Bento_Header_646X100.jpg" /></div></a>
+
+      </div>
+     
+
+      <div id="bento-mp-navbar">
+        
+        <ul id="bento-mp-nav">
+        
+
+<li class="sibling">
+	<a href="/community/facebook/">Facebook</a>
+	
+</li>
+
+<li class="sibling">
+	<a href="/community/twitter/">Twitter</a>
+	
+</li>
+
+<li class="sibling">
+	<a href="/community/pbs-blogs/">Blogs</a>
+	
+</li>
+
+<li class="selected">
+	<a href="/community/rss-directory/">RSS</a>
+	
+</li>
+
+
+        </ul>
+        <script>
+        $("#bento-mp-nav  li ul li:last-child a")
+          .css({"border-bottom":"1px solid #dfe4dd !important",
+                "-moz-border-radius-bottomleft": "5px",
+                "-moz-border-radius-bottomright": "5px",
+                    "-webkit-border-bottom-left-radius": "5px",
+                    "-webkit-border-bottom-right-radius": "5px",
+                    "border-bottom-left-radius":      "5px",
+                    "border-bottom-right-radius":    "5px",
+                });
+        </script>
+      </div>
+            <div id="breadcrumb">
+                <a href="http://www.pbs.org/search/search_programsaz.html">PBS Programs</a> » 
+<li>RSS</li>
+
+            </div>
+           
+            <div id="article">
+                <div class="textPlugin">
+<h1><strong>Subscribe to Our RSS Feeds</strong></h1>
+<p><strong>Here's an easy way to get the most recent updates from your favorite PBS shows and blogs. <br /></strong></p>
+</div><div class="bento-content-sep"
+     style="margin-left:auto; margin-right:auto;  width:95%; border-top: solid #DFE4DD 2px;">
+</div><div class="textPlugin">
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p><a title="American Masters" href="http://www.pbs.org/wnet/americanmasters/feed/" target="_self">American Masters</a><br /> A growing film library documenting the role important individuals, groups, and movements have played in the formation of our cultural identity.</p>
+<p>&nbsp;</p>
+<p><a title="FRONTLINE - Editor's Notes" href="http://feeds.feedburner.com/FrontlineEditorsNotes/" target="_self">FRONTLINE - Editor's Notes</a><br /> From Our Files: Read interviews, essays and more from selected past FRONTLINE reports.</p>
+<p>&nbsp;</p>
+<p><a title="FRONTLINE - Reports" href="http://feeds.feedburner.com/pbs/wgbh/frontline/programs-feed" target="_self">FRONTLINE - Reports</a><br /> Recent FRONTLINE reports including additional resources and video from the award winning series.</p>
+<p>&nbsp;</p>
+<p><a title="Great Performances" href="http://www.pbs.org/wnet/gperf/feed/" target="_self">Great Performances</a><br /> The only continuing primetime performance showcase on American television, GREAT PERFORMANCES presents a diverse programming portfolio of classical music, opera, popular song, musical theater, dance, drama, and performance documentaries.</p>
+<p>&nbsp;</p>
+<p><a title="Idea Lab" href="http://www.pbs.org/idealab/rss2/index.xml" target="_self">Idea Lab</a><br /> Idea Lab is a group blog by innovators who are reinventing community news for the Digital Age.</p>
+<p>&nbsp;</p>
+<p><a title="Independent Lens" href="http://feeds.feedburner.com/rss/independent_lens" target="_self">Independent Lens</a><br /> Stay connected to the latest Independt Lens updates.</p>
+<p>&nbsp;</p>
+<p><a title="Media Infusion" href="http://www.pbs.org/teachers/blogs/feed" target="_self">Media Infusion</a><br /> A PBS Teachers blog offering strategies and resources to help you create rich, engaging learning experiences with multimedia.</p>
+<p>&nbsp;</p>
+<p><a title="Media Shift" href="http://feeds.feedburner.com/pbs/mediashift-blog" target="_self">Media Shift</a><br /> Your guide to the digital media revolution, with host Mark Glaser.</p>
+<p>&nbsp;</p>
+<p><a title="Nature" href="http://www.pbs.org/wnet/nature/feed/" target="_self">Nature</a><br /> An award-winning show focused on the beauty and wonder of the natural world.</p>
+<p><a title="NOVA" href="http://www.pbs.org/wgbh/nova/rss/nova.xml" target="_self">NOVA</a><br /> Recieve the latest articles, interviews, interactives, and more from NOVA.</p>
+<p>&nbsp;</p>
+<p><a title="NOVA ScienceNOW" href="http://feeds.pbs.org/pbs/wgbh/nova/sciencenow-feed" target="_self">NOVA ScienceNOW</a><br /> NOVA turns its lens on the timeliest developments and most intriguing personalities in science and technology in a new magazine series, NOVA scienceNOW, and we want to hear what you think about it.</p>
+<p>&nbsp;</p>
+<p><a title="P.O.V." href="http://feeds.pbs.org/pbs/pov-blog" target="_self">P.O.V.</a><br /> The P.O.V. blog brings documentary news, interviews with filmmakers and more.</p>
+<p>&nbsp;</p>
+<p><a title="PBS NewsHour - Art Beat Blog" href="http://www.pbs.org/newshour/art/blog/rss.xml" target="_self">PBS NewsHour - Art Beat Blog</a><br /> Get the latest inside scoop from the Arts Beat Blog.</p>
+<p><a title="PBS NewsHour - Headlines" href="http://www.pbs.org/newshour/rss/headlines.xml" target="_self">PBS NewsHour - Headlines</a><br /> The latest news, analysis and reporting from the NewsHour, the feed is updated at least once a day and includes interviews, background reports and updates to put today's news in context.</p>
+<p><a title="PBS NewsHour - Politics" href="http://www.pbs.org/newshour/rss/politics.xml" target="_self">PBS NewsHour - Politics</a><br /> The latest news, analysis and reporting about Politics from the NewsHour, the feed is updated periodically with interviews, background reports and updates to put the news in a larger context.</p>
+<p><a title="PBS NewsHour - The Business Desk with Paul Solman" href="http://www.pbs.org/newshour/businessdesk/rss.xml" target="_self">PBS NewsHour - The Business Desk with Paul Solman</a><br /> Paul Solman takes your questions about business and economic news.</p>
+<p>&nbsp;</p>
+<p><a title="PBS Ombudsman" href="http://feeds.pbs.org/pbs/ombudsman-blog" target="_self">PBS Ombudsman</a><br /> Michael Getler reviews commentary and criticism from viewers and provides recommendations and oversight to PBS on its own standards of editorial integrity.</p>
+<p>&nbsp;</p>
+<p><a title="Religion &amp; Ethics Newsweekly - Blogs" href="http://www.pbs.org/wnet/religionandethics/category/blogs/feed/" target="_self">Religion &amp; Ethics Newsweekly - Blogs</a><br /> An online Companion to the weekly television news program.</p>
+<p><a title="Religion &amp; Politics - One Nation" href="http://www.pbs.org/wnet/religionandethics/category/blogs/one-nation-religion-politics-2008/feed/" target="_self">Religion &amp; Politics - One Nation</a><br /> An online Companion to the weekly television news program.</p>
+<p><a title="Secrets of the Dead" href="http://www.pbs.org/wnet/secrets/feed/" target="_self">Secrets of the Dead</a><br /> Using the most up-to-date science in the laboratory and in the field, scientists and researchers examine the missing pieces of each puzzle, completing the picture of what had been merely an assemblage of suppositions.</p>
+<p><a title="Tavis Smiley -Interviews" href="http://www.pbs.org/wnet/tavissmiley/rss/daily.xml" target="_self">Tavis Smiley - Interviews</a><br /> Read and watch recent interviews from teh Tavis Smiley Show.</p>
+</div>
+                <div class="clearfix">&nbsp;</div>
+            </div>
+            <div id="article-footer">
+                
+                <div class="clearfix">&nbsp;</div>
+            </div>
+        </div>
+    </div>
+    <div class="grid_8 rightcol">
+        <ol>
+            <div class="widget ads-widget cleanslate">
+   <!-- begin ad tag (tile=2) -->
+    <script type="text/javascript">
+    //<![CDATA[
+    ord=Math.random()*10000000000000000;
+    document.write('<script type="text/javascript" src="http://ad.doubleclick.net/adj/n6735.PBS/pbs_about;tile=2;sz=300x250;ord=' + ord + '?"><\/script>');
+    //]]>
+    </script>
+    <noscript><a href="http://ad.doubleclick.net/jump/n6735.PBS/pbs_about;tile=2;sz=300x250;ord=123456789?" target="_blank" ><img src="http://ad.doubleclick.net/ad/n6735.PBS/pbs_about;tile=2;sz=300x250;ord=123456789?" border="0" alt="" /></a></noscript>
+    <!-- end ad tag -->
+
+    <div class="pbs-ad-caption">Providing Support for pbs.org
+        <a href="http://www.pbs.org/aboutpbs/aboutpbs_whatisthis_banners.html" class="ads_learn_more" target="_blank" title="Providing Support for pbs.org">Learn More</a>
+    </div>
+</div>
+<div style="background-color: #ffffff; width: 318px;">
+
+  <div style="padding: 10px; font-size: 11pt;"><strong>
+      Sign Up for Program Reminders & More</strong></div>
+<p></p>
+    <div style="padding: 10px;">
+        Get the latest information about upcoming PBS programs, sneak peeks, tune-in reminders and web extras  delivered to your inbox every week.<br/>
+    </div>
+   <script type="text/javascript">
+         var pbs_newsletter_config = {
+            _dist_url : "http://newsletteradmin.pbs.org",
+            _dist_action : 'subscribe',
+            _dist_newsletter : 'PREVIEWS',
+            _dist_consumer_code : 'previews_site',
+            _frame_width: '100%',
+            _frame_height: '130'
+        }
+        document.write("<script language='javascript' type='text/javascript' src='"+ pbs_newsletter_config._dist_url +"/media/js/newsletters_distribution.js'><\/sc" + "ript>");
+        document.write('<iframe src="'+ pbs_newsletter_config._dist_url +'/'+ pbs_newsletter_config._dist_action +'/'+ pbs_newsletter_config._dist_newsletter +'/'+ pbs_newsletter_config._dist_consumer_code +'/" width="'+ pbs_newsletter_config._frame_width +'" height="'+ pbs_newsletter_config._frame_height +'" scrolling="no" frameborder="0" border="0"></iframe>')
+   </script>
+
+</div>
+<div style="background-color:white; width:304px; padding:7px!important;border-top:2px solid #005B7F;"> 
+<script language="JavaScript">
+<!--
+
+var google_adnum = 0; /* only insert this line for your first ad unit */
+
+function google_ad_request_done(google_ads) {
+
+/*
+* This function is required and is used to display
+* the ads that are returned from the JavaScript
+* request. You should modify the document.write
+* commands so that the HTML they write out fits
+* with your desired ad layout.
+*/
+
+var s = '';
+var i;
+
+/*
+* Verify that there are actually ads to display.
+*/
+
+if (google_ads.length == 0) {
+return;
+}
+
+/*
+* If an image, flash or html ad is returned, display that ad.
+* Otherwise, build a string containing all of the ads and
+* then use a document.write() command to print that string.
+*/ 
+
+if (google_ads[0].type == "flash") {
+
+   s += '<a href=\"' +
+google_info.feedback_url + '\" style="color:000000">Ads by Google</a><br>' + 
+'<object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000"' +
+' codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,0,0" WIDTH="' + 
+google_ad.image_width +	'" HEIGHT="' + 
+google_ad.image_height + '"> <PARAM NAME="movie" VALUE="' + 
+google_ad.image_url + '">' + 
+'<PARAM NAME="quality" VALUE="high">' + 
+'<PARAM NAME="AllowScriptAccess" VALUE="never">' + 
+'<EMBED src="' + 
+google_ad.image_url + '" WIDTH="' + 
+google_ad.image_width + '" HEIGHT="' + 
+google_ad.image_height + 
+'" TYPE="application/x-shockwave-flash"' + 
+' AllowScriptAccess="never" ' + 
+' PLUGINSPAGE="http://www.macromedia.com/go/getflashplayer"></EMBED></OBJECT>';
+
+} else if (google_ads[0].type == "image") {
+
+   s += '<a href=\"' +
+google_info.feedback_url + '\" style="color:000000">Ads by Google</a><br> <a href="' + 
+google_ads[0].url + '" target="_top" title="go to ' + 
+google_ads[0].visible_url + '" onmouseout="window.status=\'\'" onmouseover="window.status=\'go to ' + 
+google_ads[0].visible_url + '\';return true"><img border="0" src="' + 
+google_ads[0].image_url + '"width="' + 
+google_ads[0].image_width + '"height="' + 
+google_ads[0].image_height + '"></a>';
+
+} else if (google_ads[0].type == "html") {
+
+   s += '<a href=\"' +
+google_info.feedback_url + '\" style="color:000000">Ads by Google</a><br>' + 
+google_ads[0].snippet;
+
+} else {
+
+if (google_ads.length == 1) {
+
+/*
+* Partners should adjust text sizes
+* so ads occupy the majority of ad space.
+*/
+
+   s += '<a href=\"' +
+google_info.feedback_url + '\" style="color:000000">Ads by Google</a><br> <a style="text-decoration:none" href="' + 
+google_ads[0].url + '" onmouseout="window.status=\'\'" onmouseover="window.status=\'go to ' +
+google_ads[0].visible_url + '\';return true"> <span style="text-decoration:underline;font-size:10pt"> <b>' + 
+google_ads[0].line1 + '</b><br></span></a> <span style="color:#000000;font-size:10pt">' +
+google_ads[0].line2 + '&nbsp;' +
+google_ads[0].line3 + '<br></span> <a style="color:#018DD1;font-size:10pt;text-decoration:none" href="' + 
+google_ads[0].url + '" onmouseout="window.status=\'\'" onmouseover="window.status=\'go to ' +
+google_ads[0].visible_url + '\';return true"><span>' + 
+google_ads[0].visible_url + '</span></a><br>';
+
+} else if (google_ads.length > 1) {
+
+   s += '<a href=\"' + google_info.feedback_url + '\" style="color:000000">Ads by Google</a><br>' 
+
+  /*
+  * For text ads, append each ad to the string.
+  */
+
+for(i = 0; i < google_ads.length; ++i) {
+
+s += '<br><a style="text-decoration:none" href="' + 
+google_ads[i].url + '" onmouseout="window.status=\'\'" onmouseover="window.status=\'go to ' +
+google_ads[i].visible_url + '\';return true"> <span style="text-decoration:underline"> <b>' + 
+google_ads[i].line1 + '</b><br></span></a> <span style="color:#000000">' +
+google_ads[i].line2 + '<br>' +
+google_ads[i].line3 + '<br></span> <a style="color:#018DD1;text-decoration:none" href="' + 
+google_ads[i].url + '" onmouseout="window.status=\'\'" onmouseover="window.status=\'go to ' +
+google_ads[i].visible_url + '\';return true"><span>' + 
+google_ads[i].visible_url + '</span></a><br>';
+}
+}
+    }
+
+if (google_ads[0].bidtype == "CPC") { /* insert this snippet for each ad call */
+google_adnum = google_adnum + google_ads.length;
+}
+
+    document.write(s);
+    return;
+  }
+
+google_ad_client = 'pub-5728525056087930'; /* substitute your client_id (pub-#) */
+google_ad_channel = '';
+google_ad_output = 'js';
+google_max_num_ads = '3';
+google_ad_type = 'text';
+google_image_size = '300x250';
+google_feedback = 'on';
+google_skip = google_adnum; /* to skip for multiple units, insert this snippet for each ad call */
+// -->
+</script>
+
+<!--
+/*
+* The JavaScript returned from the following page uses
+* the parameter values assigned above to populate an array
+* of ad objects. Once that array has been populated,
+* the JavaScript will call the google_ad_request_done
+* function to display the ads.
+*/ 
+-->
+
+<script language="JavaScript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script> 
+</div>
+
+
+        </ol>
+    </div>
+    <div class="clear">&nbsp;</div>
+</div>
+
+    
+    <div id="pbs-footer" class="footer-widget cleanslate">
+        <div class="pbs-wrap">
+            <ul class="pbs-link-holder clearfix">
+                <li><h6>Explore Topics</h6>
+                    <ul>
+                        <li>
+                            <a href="http://www.pbs.org/topics/arts-entertainment/">Arts &amp; Entertainment</a></li>
+                        <li>
+                            <a href="http://www.pbs.org/topics/culture-society/">Culture &amp; Society</a></li>
+                        <li class="last">
+                            <a href="http://www.pbs.org/topics/health/">Health</a></li>
+                    </ul>
+                    <ul>
+                        <li>
+                            <a href="http://www.pbs.org/topics/history/">History</a></li>
+                        <li>
+                            <a href="http://www.pbs.org/topics/how-to/">Home &amp; How-To</a></li>
+                        <li class="last">
+                            <a href="http://www.pbs.org/topics/news-politics/">News &amp; Public Affairs</a></li>
+                    </ul>
+                    <ul>
+                        <li>
+                            <a href="http://www.pbs.org/topics/parenting/">Parents</a></li>
+                        <li>
+                            <a href="http://www.pbs.org/topics/science-nature/">Science &amp; Nature</a></li>
+                        <li class="last">
+                            <a href="http://www.pbs.org/topics/technology/">Technology</a></li>
+                    </ul>
+                </li>
+                <li class="last"><h6>Media Resources</h6>
+                    <ul>
+                        <li><a rel="external" class="video" href="http://video.pbs.org/" target="_blank">Videos</a></li>
+                        <li><a rel="external" class="blog" href="http://www.pbs.org/engage/blogs/programs/">Blogs</a></li>
+                        <li><a rel="external" class="blog" href="http://www.pbs.org/services/newsletters/">Newsletters</a></li>
+                        <li class="last"><a rel="external" class="blog" href="http://www.pbs.org/widgets">Widgets</a></li>
+                    </ul>
+                    <ul>
+                        <li><a rel="external" class="facebook" href="http://www.facebook.com/pbs" target="_blank">Facebook</a></li>
+                        <li><a rel="external" class="twitter" href="http://www.twitter.com/pbs" target="_blank">Twitter</a></li>
+                        <li><a rel="external" class="youtube" href="http://www.youtube.com/PBS" target="_blank">YouTube</a></li>
+                        <li class="last"><a rel="external" class="blog" href="http://www.pbs.org/community">PBS Community</a></li>
+                    </ul>
+                    <ul class="last">
+                        <li><a rel="external" class="" href="http://www.pbs.org/ombudsman">Ombudsman</a></li>
+                        <li><a rel="external" class="" href="http://www.pbs.org/producers/">Producing for PBS</a></li>
+                        <li  class="last"><a rel="external" class="" href="http://www.pbs.org/about/news/">Newsroom</a></li>
+                    </ul>
+                </li>
+            </ul>
+            <ul class="pbs-sites">
+                <li class="footer-title"><a>PBS Sites</a></li>
+                <li><a rel="external" href="http://www.pbskids.org">PBS KIDS</a></li>
+                <li><a rel="external" href="http://video.pbs.org/">PBS Video</a></li>
+                <li><a rel="external" href="http://www.pbs.org/parents/">PBS Parents</a></li>
+                <li><a rel="external" href="http://www.pbs.org/teachers/">PBS Teachers</a></li>
+                <li class="last"><a rel="external" href="http://www.pbs.org/arts/">PBS Arts</a></li>
+            </ul>
+            <ul class="pbs-site-map">
+                <li class="first"><a href="http://www.pbs.org/"><img src="http://www-tc.pbs.org/s3/pbs.merlin.cdn.prod/media/images/pbs-logo.png" /></a></li>
+                <li><a rel="external" href="http://www.pbs.org/about/">About PBS</a></li>
+                <li><a rel="external" href="http://www.pbs.org/cgi-registry/sitemembershiplink.cgir" target="_blank" >Donate</a></li>
+                <li><a rel="external" href="http://www.pbs.org/cgi-registry/whatson/index.cgir" target="_blank">TV Schedules</a></li>
+                <li><a rel="external" href="http://www.pbs.org/about/careers/">Career Opportunities</a></li>
+                <li><a rel="external" href="http://www.pbs.org/about/contact/">Contact Us</a></li>
+                <li><a rel="external" href="http://www.pbs.org/about/policies/privacy-policy/">Privacy Policy</a></li>
+                <li class="last"><a rel="external" href="http://www.pbs.org/about/policies/terms-of-use/">Terms of Use</a></li>
+            </ul>
+
+            <p class="pbs-copy">
+                <span class="left">Copyright&copy; 1995 – 2013 Public Broadcasting Service (PBS). All rights reserved.</span>
+                <span class="right">Our partner in public broadcasting:
+                    <a href="http://www.npr.org" target="_blank"><img src="http://www-tc.pbs.org/s3/pbs.merlin.cdn.prod/media/images/npr-logo.jpg" alt="NPR"/> </a></span>
+            </p>
+        </div>
+    </div>
+    <!-- End div.pbs-footer -->
+    
+
+    
+    <script type="text/javascript" src="http://cdn.gigya.com/JS/socialize.js?apikey=2_txlUPhIBhbjs_VzFJKeb-9yGNWwBonozzx8Jnfb7vy-UMeF8QsS6fAYVHA-XPZC5"></script>
+    <script type="text/javascript" src="http://ec2-50-16-227-110.compute-1.amazonaws.com/media/pkg-bottom.js?1331629380"></script>
+</div>
+
+    <!-- Calling auto localization code because we haven't yet. -->
+    <script type="application/javascript" src="http://www.pbs.org/cgi-registry/preferences/localize/ip2station-js.cgir?auto_local_unset"></script>
+
+
+<script type="text/javascript">
+var GA_env = { ua_list: "UA-4005067-1,UA-1996666-1,ET-1996666-4" };
+
+GA_env.vars = { localized: 0 };
+
+var GA_jshost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + GA_jshost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script src="/js/ga-current.js" type="text/javascript"></script>
+
+<!-- Begin Universal Google Analytics -->
+<script> 
+  (function() {
+	window['GoogleAnalyticsObject'] = '_uga';
+	window['_uga'] = window['_uga'] || function() {
+		(window['_uga'].q = window['_uga'].q || []).push(arguments)
+	},
+	window['_uga'].l = 1*new Date();
+	var ga = document.createElement('script');
+	ga.async = true;
+	ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/analytics.js';
+	var s = document.getElementsByTagName('script')[0];
+	s.parentNode.insertBefore(ga, s);
+   })();
+
+	window._uga('create', 'UA-1996666-7',  {name: 'uga_0'});
+	window._uga('uga_0' + '.send', 'pageview');
+	window._uga('create', 'UA-4005067-2',  {name: 'uga_1'});
+	window._uga('uga_1' + '.send', 'pageview');
+   
+</script> 
+<!-- End Universal Google Analytics -->
+
+<!-- Begin comScore Tag --> 
+<script> 
+  var _comscore = _comscore || []; 
+  _comscore.push({ c1: "2", c2: "3005420" }); 
+  (function() { 
+    var s = document.createElement("script"), el = document.getElementsByTagName("script")[0]; s.async = true; 
+    s.src = (document.location.protocol == "https:" ? "https://sb" : "http://b") + ".scorecardresearch.com/beacon.js"; 
+    el.parentNode.insertBefore(s, el); 
+  })(); 
+</script> 
+<noscript> 
+  <img src="http://b.scorecardresearch.com/p?c1=2&c2=3005420&cv=2.0&cj=1" /> 
+</noscript> 
+<!-- End comScore Tag --> 
+
+    <style>layer { position: absolute; }</style>
+<script type='text/javascript' language='JavaScript' src='/includes/javascript/elqNow/elqCfg.js'></script>
+<script type='text/javascript' language='JavaScript' src='/includes/javascript/elqNow/elqImg.js'></script> 
+
+    <script type="text/javascript" src="/foresee/foresee-trigger.js"></script>
+
+
+
+</body>
+</html>
