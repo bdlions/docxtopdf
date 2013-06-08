@@ -1,8 +1,8 @@
 <?php
 
-require('lib/fpdf.php');
+require('lib/pdf.php');
 
-class RiskRegisterPDF extends FPDF {
+class RiskRegisterPDF extends PDF {
 
     var $data;
     var $report_request_id;
@@ -41,8 +41,8 @@ class RiskRegisterPDF extends FPDF {
             }
         }
     }
-    
-    function processRiskRegister($riskRegister){
+
+    function processRiskRegister($riskRegister) {
         foreach ($riskRegister as $key => $value) {
             if ($key == REPORT_DATE) {
                 $this->report_date = $value;
@@ -58,46 +58,52 @@ class RiskRegisterPDF extends FPDF {
     function generate_pdf() {
 
         $this->SetFont('Times', '', 12);
-        $this->SetFillColor(224,235,255);
+        $this->SetFillColor(224, 235, 255);
         $this->SetAutoPageBreak(false);
         //$this->SetTextColor(0);
-	//$this->SetDrawColor(128,0,0);
-        
+        //$this->SetDrawColor(128,0,0);
+
         $col_data = array();
         foreach ($this->risk_register_rows as $value) {
-            
-            $sra_riks_id = $this->getCellValue($value,SRA_RISK_ID);
-            $date = $this->getCellValue($value,DATE);
-            $source_register = $this->getCellValue($value,SOURCE_REGISTER);
-            $practice_area = $this->getCellValue($value,PRACTICE_AREA);
-            $trigger_event = $this->getCellValue($value,TRIGGER_EVENT);
-            $compliance_officer = $this->getCellValue($value,COMPLIANCE_OFFICER);
-            $action_taken = $this->getCellValue($value,ACTION_TAKEN);
-            $comments = $this->getCellValue($value,COMMENTS);
-           
+
+            $sra_riks_id = $this->getCellValue($value, SRA_RISK_ID);
+            $date = $this->getCellValue($value, DATE);
+            $source_register = $this->getCellValue($value, SOURCE_REGISTER);
+            $practice_area = $this->getCellValue($value, PRACTICE_AREA);
+            $trigger_event = $this->getCellValue($value, TRIGGER_EVENT);
+            $compliance_officer = $this->getCellValue($value, COMPLIANCE_OFFICER);
+            $action_taken = $this->getCellValue($value, ACTION_TAKEN);
+            $comments = $this->getCellValue($value, COMMENTS);
+
             $col_data = array();
-            array_push($col_data,
-                array('cell_width'=>10, 'cell_value'=> $sra_riks_id),
-                array('cell_width'=>DEFAULT_CELL_WIDTH, 'cell_value'=> $date),
-                array('cell_width'=>DEFAULT_CELL_WIDTH, 'cell_value'=> $source_register),        
-                array('cell_width'=>DEFAULT_CELL_WIDTH, 'cell_value'=> $practice_area),
-                array('cell_width'=>DEFAULT_CELL_WIDTH, 'cell_value'=> $trigger_event),
-                array('cell_width'=>DEFAULT_CELL_WIDTH, 'cell_value'=> $compliance_officer),
-                array('cell_width'=>DEFAULT_CELL_WIDTH, 'cell_value'=> $action_taken),
-                array('cell_width'=>DEFAULT_CELL_WIDTH, 'cell_value'=> $comments)
+            array_push($col_data, 
+                    array('cell_width' => 10, 'cell_value' => $sra_riks_id), 
+                    array('cell_width' => DEFAULT_CELL_WIDTH, 'cell_value' => $date), 
+                    array('cell_width' => DEFAULT_CELL_WIDTH, 'cell_value' => $source_register), 
+                    array('cell_width' => DEFAULT_CELL_WIDTH, 'cell_value' => $practice_area), 
+                    array('cell_width' => DEFAULT_CELL_WIDTH, 'cell_value' => $trigger_event), 
+                    array('cell_width' => DEFAULT_CELL_WIDTH, 'cell_value' => $compliance_officer), 
+                    array('cell_width' => DEFAULT_CELL_WIDTH, 'cell_value' => $action_taken), 
+                    array('cell_width' => DEFAULT_CELL_WIDTH, 'cell_value' => $comments)
             );
-            
+
             //the height that we need to add new row
             $row_height = $this->getEssentialRowHeight($col_data);
-            
+
             //Issue a page break first if needed
             $this->CheckPageBreak($row_height);
             
-            //adding a row
+            //drawing data into the cell and get the maximum row height
+            $fill_height = $this->getRowHeightByFillData($col_data);
+            //filling the cell with background color that overlaps the data 
+            //those are drawn before
+            //now we have to draw the data again
+            $this->fillBackGroundColor($col_data, $fill_height);
+            //drawing data and set next line
             $this->addRow($col_data);
         }
     }
-    
+
     function getEssentialRowHeight($col_data) {
         $max_height = 0;
         for ($i = 0; $i < count($col_data); $i++) {
@@ -106,84 +112,16 @@ class RiskRegisterPDF extends FPDF {
 
         //To calculate the row_height we need to multiply max_height by 5
         //but I don't know why
+        //I hv gotten it from a tutorial
         return 5 * $max_height;
     }
-    
+
     function CheckPageBreak($height) {
-        //If the height would cause an overflow, add a new page immediately
-        if ($this->GetY() + $height > $this->PageBreakTrigger)
+        //If the height would cause an overflow, 
+        //add a new page immediately
+        if ($this->GetY() + $height > $this->PageBreakTrigger) {
             $this->AddPage($this->CurOrientation);
-    }
-    
-    function NbLines($w, $txt) {
-        //Computes the number of lines a MultiCell of width w will take
-        $cw = &$this->CurrentFont['cw'];
-        if ($w == 0)
-            $w = $this->w - $this->rMargin - $this->x;
-        $wmax = ($w - 2 * $this->cMargin) * 1000 / $this->FontSize;
-        $s = str_replace("\r", '', $txt);
-        $nb = strlen($s);
-        if ($nb > 0 and $s[$nb - 1] == "\n")
-            $nb--;
-        $sep = -1;
-        $i = 0;
-        $j = 0;
-        $l = 0;
-        $nl = 1;
-        while ($i < $nb) {
-            $c = $s[$i];
-            if ($c == "\n") {
-                $i++;
-                $sep = -1;
-                $j = $i;
-                $l = 0;
-                $nl++;
-                continue;
-            }
-            if ($c == ' ')
-                $sep = $i;
-            $l+=$cw[$c];
-            if ($l > $wmax) {
-                if ($sep == -1) {
-                    if ($i == $j)
-                        $i++;
-                }
-                else
-                    $i = $sep + 1;
-                $sep = -1;
-                $j = $i;
-                $l = 0;
-                $nl++;
-            }
-            else
-                $i++;
         }
-        return $nl;
-    }
-    
-    function addRow($col_data) {
-        $x = $this->GetX();
-        $maxRowHeight = 0;
-        for ($col = 0; $col < count($col_data); $col++) {
-
-            $yBeforeCell = $this->GetY();
-            $borders = 'LB' . ($col + 1 == count($col_data) ? 'R' : ''); // Only add R for last col
-            $this->MultiCell($col_data[$col]['cell_width'], DEFAULT_CELL_HEIGHT, $col_data[$col]['cell_value'], $borders, 'L', true);
-
-            $yCurrent = $this->GetY();
-            $rowHeight = $yCurrent - $yBeforeCell;
-            if ($maxRowHeight < $rowHeight) {
-                $maxRowHeight = $rowHeight;
-            }
-            //echo "Height: ".$col_data[$col]['cell_width']. "<br/>";
-            $this->SetXY($x + $col_data[$col]['cell_width'], $yCurrent - $rowHeight);
-            $x = $this->GetX();
-        }
-        $this->Ln($maxRowHeight);
-    }
-    
-    function getCellValue($obj, $name){
-        return isset($obj[$name]) == true ? is_array($obj[$name]) == true? "": $obj[$name] : "";
     }
 
     // Page header
@@ -210,7 +148,7 @@ class RiskRegisterPDF extends FPDF {
         // Arial italic 8
         $this->SetFont('Arial', 'I', 8);
         // Page number
-        $this->Cell(0,10,'Page '.$this->PageNo().'/{nb}',0,0,'C');
+        $this->Cell(0, 10, 'Page ' . $this->PageNo() . '/{nb}', 0, 0, 'C');
     }
 
 }

@@ -15,7 +15,7 @@
 				<sample:trigger-event>trigger-event</sample:trigger-event>
 				<sample:compliance-officer>compliance-officer</sample:compliance-officer>
 				<sample:action-taken>action-taken</sample:action-taken>
-				<sample:comments>comments</sample:comments>
+				<sample:comments>commentscommentscommentscommentscommentscommentscommentscommentscommentscommentscommentscommentscomments</sample:comments>
 			</sample:risk-register-row>
 			<sample:risk-register-row>
 				<sample:sra-risk-id>sra-risk-id</sample:sra-risk-id>
