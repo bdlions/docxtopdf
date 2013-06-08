@@ -21,4 +21,16 @@ define('TRIGGER_EVENT', 'trigger-event');
 define('COMPLIANCE_OFFICER', 'compliance-officer');
 define('ACTION_TAKEN', 'action-taken');
 define('COMMENTS', 'comments');
+
+define('HEADER', 'header');
+define('FOOTER', 'footer');
+define('IMAGE', 'img');
+define('FONT', 'font');
+define('PARAGRAPH', 'paragraph');
+define('PARAGRAPHS', 'paragraphs');
+define('TABLE', 'table');
+define('ROW', 'row');
+define('COLUMNS', 'cols');
+define('COLUMN', 'col');
+define('ALTERNATE_BACKGROUND_COLOR','alternateBackgroundColor');
 ?>

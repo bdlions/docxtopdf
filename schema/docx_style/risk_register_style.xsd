@@ -1,0 +1,138 @@
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="document">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="header">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="img">
+                <xs:complexType>
+                  <xs:simpleContent>
+                    <xs:extension base="xs:string">
+                      <xs:attribute type="xs:string" name="src"/>
+                      <xs:attribute type="xs:short" name="x"/>
+                      <xs:attribute type="xs:byte" name="y"/>
+                      <xs:attribute type="xs:byte" name="size"/>
+                    </xs:extension>
+                  </xs:simpleContent>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="paragraphs">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="paragraph" maxOccurs="unbounded" minOccurs="0">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="font">
+                      <xs:complexType>
+                        <xs:simpleContent>
+                          <xs:extension base="xs:string">
+                            <xs:attribute type="xs:string" name="weight" use="optional"/>
+                            <xs:attribute type="xs:string" name="color" use="optional"/>
+                            <xs:attribute type="xs:string" name="font_name" use="optional"/>
+                            <xs:attribute type="xs:byte" name="size" use="optional"/>
+                          </xs:extension>
+                        </xs:simpleContent>
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                  <xs:attribute type="xs:string" name="id" use="optional"/>
+                  <xs:attribute type="xs:string" name="backgournd_color" use="optional"/>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="table">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="header">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="font">
+                      <xs:complexType>
+                        <xs:simpleContent>
+                          <xs:extension base="xs:string">
+                            <xs:attribute type="xs:string" name="weight"/>
+                            <xs:attribute type="xs:string" name="color"/>
+                            <xs:attribute type="xs:string" name="font_name"/>
+                            <xs:attribute type="xs:byte" name="size"/>
+                            <xs:attribute type="xs:string" name="text-align"/>
+                          </xs:extension>
+                        </xs:simpleContent>
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                  <xs:attribute type="xs:string" name="backgournd_color"/>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="alternateBackgroundColor">
+                <xs:complexType>
+                  <xs:simpleContent>
+                    <xs:extension base="xs:string">
+                      <xs:attribute type="xs:string" name="odd-row"/>
+                      <xs:attribute type="xs:string" name="even-row"/>
+                    </xs:extension>
+                  </xs:simpleContent>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="row">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="cols">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="col" maxOccurs="unbounded" minOccurs="0">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element name="font">
+                                  <xs:complexType>
+                                    <xs:simpleContent>
+                                      <xs:extension base="xs:string">
+                                        <xs:attribute type="xs:string" name="weight" use="optional"/>
+                                        <xs:attribute type="xs:string" name="color" use="optional"/>
+                                        <xs:attribute type="xs:string" name="font_name" use="optional"/>
+                                        <xs:attribute type="xs:byte" name="size" use="optional"/>
+                                        <xs:attribute type="xs:string" name="text-align" use="optional"/>
+                                      </xs:extension>
+                                    </xs:simpleContent>
+                                  </xs:complexType>
+                                </xs:element>
+                              </xs:sequence>
+                              <xs:attribute type="xs:string" name="header_text" use="optional"/>
+                            </xs:complexType>
+                          </xs:element>
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="footer">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="img">
+                <xs:complexType>
+                  <xs:simpleContent>
+                    <xs:extension base="xs:string">
+                      <xs:attribute type="xs:string" name="src"/>
+                      <xs:attribute type="xs:byte" name="x"/>
+                      <xs:attribute type="xs:byte" name="y"/>
+                      <xs:attribute type="xs:byte" name="size"/>
+                    </xs:extension>
+                  </xs:simpleContent>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document>
+    <header>
+        <img src="header_logo.png" x="160" y ="8" size="40"></img>
+    </header>
+    <paragraphs>
+        <paragraph id="risk_register" backgournd_color="#FFFFFF">
+            <font weight="" color="#FF0000" font_name ="Times" size="20">
+                Risk Register
+            </font>
+        </paragraph>
+        <paragraph id="firm" backgournd_color="#FFFFFF">
+            <font weight="" color="#000000" font_name ="Times" size="12">
+                Firm:
+            </font>
+        </paragraph>
+        <paragraph id="date" backgournd_color="#FFFFFF">
+            <font weight="" color="#000000" font_name ="Times" size="12">
+                Date:
+            </font>
+        </paragraph>
+     </paragraphs>
+    <table>
+        <header backgournd_color="#0000FF">
+            <font weight="BI" color="#000000" font_name="Times" size="14" text-align="center"></font>
+        </header>
+        <alternateBackgroundColor odd-row="#E6E6E6" even-row="#FFFFFF"></alternateBackgroundColor>
+        <row>
+            <cols>
+                <col header_text = "SRA Risk ID">
+                    <font weight="I" color="#000000" font_name="Times" size="12" text-align="center"></font>
+                </col>
+                <col header_text = "Date">
+                    <font weight="" color="#000000" font_name="Times" size="12" text-align="center"></font>
+                </col>
+                <col header_text = "Source register">
+                    <font weight="" color="#000000" font_name="Times" size="12" text-align="center"></font>
+                </col>
+                <col header_text = "Practice area">
+                    <font weight="" color="#000000" font_name="Times" size="12" text-align="center"></font>
+                </col>
+                <col header_text = "Trigger event">
+                    <font weight="" color="#000000" font_name="Times" size="12" text-align="center"></font>
+                </col>
+                <col header_text = "Compliance officer">
+                    <font weight="" color="#000000" font_name="Times" size="12" text-align="center"></font>
+                </col>
+                <col header_text = "Immediate action taken to manage the risk and date">
+                    <font weight="" color="#000000" font_name="Times" size="12" text-align="center"></font>
+                </col>
+                <col header_text = "Comments">
+                    <font weight="" color="#000000" font_name="Times" size="12" text-align="center"></font>
+                </col>
+            </cols>
+        </row>
+    </table>
+    <footer>
+        <img src="footer_logo.png" x="10" y ="-15" size="30"></img>
+    </footer>
+</document>

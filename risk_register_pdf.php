@@ -1,7 +1,12 @@
 <?php
 
 require('lib/pdf.php');
-//require 'lib/draw.php';
+include 'lib/style/paragraph.php';
+include 'lib/style/table.php';
+include 'lib/style/header.php';
+include 'lib/style/footer.php';
+include 'lib/style/column.php';
+include 'lib/color_converter.php';
 
 class RiskRegisterPDF extends PDF {
 
@@ -15,8 +20,31 @@ class RiskRegisterPDF extends PDF {
     var $footer_height = 15;
     var $risk_register_rows = array();
     var $page_first_row = true;
+    
+    
+    var $header;
+    var $footer;
+    var $table;
+    var $risk_register_para;
+    var $firm_para;
+    var $date_para;
+    var $colorConverter;
 
-    public function load_data($data) {
+    public function __construct() {
+        parent::__construct();
+        
+        $this->header = new Header(null);
+        $this->footer = new Footer(null);
+        $this->table = new Table(null);
+        
+        $this->risk_register_para = new Paragraph(null);
+        $this->firm_para = new Paragraph(null);
+        $this->date_para= new Paragraph(null);
+        $this->colorConverter = new ColorConverter();
+        
+    }
+    
+    public function load_data($data, $styles) {
         $this->data = $data;
         if (is_array($data)) {
             if (key($data) == REPORT_REQUEST) {
@@ -44,6 +72,24 @@ class RiskRegisterPDF extends PDF {
                 $this->risk_register_rows = $data;
             }
         }
+        
+        
+        foreach ($styles as $style) {
+
+            $this->header = new Header($style[HEADER]);
+            $this->table = new Table($style[TABLE]);
+            $this->footer = new Footer($style[FOOTER]);
+
+            foreach ($style[PARAGRAPHS] as $key => $paragraph) {
+                if ($paragraph['id'] == 'risk_register') {
+                    $this->risk_register_para = new Paragraph($paragraph);
+                } else if ($paragraph['id'] == 'firm') {
+                    $this->firm_para = new Paragraph($paragraph);
+                } else if ($paragraph['id'] == 'date') {
+                    $this->date_para = new Paragraph($paragraph);
+                }
+            }
+        }
     }
 
     function processRiskRegister($riskRegister) {
@@ -61,32 +107,34 @@ class RiskRegisterPDF extends PDF {
 
     function generate_pdf() {
         
-        // Arial bold 15
-        $this->SetFont('Times', '', 20);
+       
+        $this->SetFont($this->risk_register_para->font_family, $this->risk_register_para->font_weight, $this->risk_register_para->font_size);
+        $this->colorConverter->convertHex2RGB($this->risk_register_para->font_color);
+        $this->SetTextColor($this->colorConverter->r, $this->colorConverter->g, $this->colorConverter->b);
         $this->Cell(0, 30, "Risk Register", 0, 1);
         
-        $style = array('width' => 0.5, 'cap' => 'butt', 'join' => 'miter', 'dash' => '10, 20, 5, 10', 'phase' => 10, 'color' => array(27,161,226));
+        $style = array('width' => 0.2, 'color' => array(27,161,226));
         $this->Line(10, 31, 200, 31, $style);
 
         $this->SetXY($this->GetX(), 34);
-        $this->SetFont('Times', 'B', 12);
-        $this->SetTextColor(27,161,226);
+        
+        $this->SetFont($this->firm_para->font_family, $this->firm_para->font_weight, $this->firm_para->font_size);
+        $this->colorConverter->convertHex2RGB($this->firm_para->font_color);
+        $this->SetTextColor($this->colorConverter->r, $this->colorConverter->g, $this->colorConverter->b);
         $this->Cell(0, DEFAULT_CELL_HEIGHT, "Firm: " . $this->firm_name, 0, 1);
+        
+        $this->SetFont($this->date_para->font_family, $this->date_para->font_weight, $this->date_para->font_size);
+        $this->colorConverter->convertHex2RGB($this->date_para->font_color);
+        $this->SetTextColor($this->colorConverter->r, $this->colorConverter->g, $this->colorConverter->b);
         $this->Cell(0, DEFAULT_CELL_HEIGHT, "Date: " . $this->report_date, 0, 1);
-        
-        
         
         $this->SetAutoPageBreak(false);
         $this->SetFont('Times', '', 12);
         $this->SetTextColor(0,0,0);
-        
-        //$this->SetFillColor(224, 235, 255);
-        //$this->SetFillColor(190, 190, 190);
-        
-        //$this->SetTextColor(0);
+
         $this->SetDrawColor(190, 190, 190);
 
-        $row_count = 0;
+        $row_count = 1;
         $col_data = array();
         foreach ($this->risk_register_rows as $value) {
 
@@ -120,10 +168,12 @@ class RiskRegisterPDF extends PDF {
                 $this->page_first_row = true;
             }
             if($row_count % 2 == 0){
-                $this->SetFillColor(230, 230, 230);
+                $this->colorConverter->convertHex2RGB($this->table->alternateRowBackColor->even_row_color);
+                $this->SetFillColor($this->colorConverter->r, $this->colorConverter->g, $this->colorConverter->b);
             }
             else{
-                $this->SetFillColor(255, 255, 255);
+                $this->colorConverter->convertHex2RGB($this->table->alternateRowBackColor->odd_row_color);
+                $this->SetFillColor($this->colorConverter->r, $this->colorConverter->g, $this->colorConverter->b);
             }
             //drawing data into the cell and get the maximum row height
             $fill_height = $this->getRowHeightByFillData($col_data);
@@ -146,7 +196,7 @@ class RiskRegisterPDF extends PDF {
         $this->Cell(80);
         // Logo
         //image(filename, x, y, width)
-        $this->Image('images/header_logo.png', 160, 8, 40);
+        $this->Image('images/'.$this->header->src, $this->header->x, $this->header->y, $this->header->size);
         $this->Ln();
     }
 
@@ -156,7 +206,8 @@ class RiskRegisterPDF extends PDF {
         $this->SetY(-15);
         // Logo
         //image(filename, x, y, width)
-        $this->Image('images/footer_logo.png', 10, $this->GetY(), 30);
+        
+        $this->Image('images/'.$this->footer->src, $this->footer->x, $this->GetY(), $this->footer->size);
         // Arial italic 8
         $this->SetFont('Arial', 'I', 8);
         // Page number
