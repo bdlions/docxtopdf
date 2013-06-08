@@ -54,20 +54,50 @@ class PDF extends FPDF {
         return $nl;
     }
 
-    function fillBackGroundColor($col_data, $height) {
+    function fillBackGroundColor($col_data, $height, $is_first_row) {
 
         $x = $this->GetX();
         $y = $this->GetY();
 
         for ($col = 0; $col < count($col_data); $col++) {
-            //$borders = 'LB' . ($col + 1 == count($col_data) ? 'R' : ''); // Only add R for last col
-            $borders = '';
+            $borders = 'BR';
+            
+            $borders = $col == 0?$borders.'L':$borders;
+            $borders = $is_first_row == true? $borders.'T':$borders;
+            
             $this->Cell($col_data[$col]['cell_width'], $height, '', $borders, 0, 'C', true);
         }
 
         $this->SetXY($x, $y);
     }
+    function getEssentialRowHeight($col_data) {
+        $max_height = 0;
+        for ($i = 0; $i < count($col_data); $i++) {
+            $max_height = max($max_height, $this->NbLines($col_data[$i]['cell_width'], $col_data[$i]['cell_value']));
+        }
 
+        //To calculate the row_height we need to multiply max_height by 5
+        //but I don't know why
+        //I hv gotten it from a tutorial
+        return 5 * $max_height;
+    }
+    function isPageBreakNeeded($height, $footer_height = 0) {
+        //If the height would cause an overflow, 
+        //add a new page immediately
+        if ($this->GetY() + $height + $footer_height> $this->PageBreakTrigger) {
+            return true;
+        }
+    }
+   
+    function addPageBreak($height, $header_height = 20, $footer_height = 0) {
+        //If the height would cause an overflow, 
+        //add a new page immediately
+        if ($this->GetY() + $height + $footer_height> $this->PageBreakTrigger) {
+            $this->AddPage($this->CurOrientation);
+            $this->ln( $header_height );
+            return true;
+        }
+    }
     function getRowHeightByFillData($col_data) {
         $start_x_pos = $this->GetX();
         $start_y_pos = $this->GetY();

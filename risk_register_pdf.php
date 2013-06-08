@@ -14,6 +14,7 @@ class RiskRegisterPDF extends PDF {
     var $header_height = 15;
     var $footer_height = 15;
     var $risk_register_rows = array();
+    var $page_first_row = true;
 
     public function load_data($data) {
         $this->data = $data;
@@ -66,10 +67,7 @@ class RiskRegisterPDF extends PDF {
         
         $style = array('width' => 0.5, 'cap' => 'butt', 'join' => 'miter', 'dash' => '10, 20, 5, 10', 'phase' => 10, 'color' => array(27,161,226));
         $this->Line(10, 31, 200, 31, $style);
-        
-        $this->SetLineStyle(array('color'=>'0 0 0'));
-       
-        
+
         $this->SetXY($this->GetX(), 34);
         $this->SetFont('Times', 'B', 12);
         $this->SetTextColor(27,161,226);
@@ -86,7 +84,7 @@ class RiskRegisterPDF extends PDF {
         //$this->SetFillColor(190, 190, 190);
         
         //$this->SetTextColor(0);
-        //$this->SetDrawColor(128,0,0);
+        $this->SetDrawColor(190, 190, 190);
 
         $row_count = 0;
         $col_data = array();
@@ -117,46 +115,30 @@ class RiskRegisterPDF extends PDF {
             $row_height = $this->getEssentialRowHeight($col_data);
 
             //Issue a page break first if needed
-            
-            $this->CheckPageBreak($row_height, $this->header_height, $this->footer_height);
+            if($this->isPageBreakNeeded($row_height, $this->footer_height)){
+                $this->addPageBreak($row_height, $this->header_height, $this->footer_height);
+                $this->page_first_row = true;
+            }
             if($row_count % 2 == 0){
-                $this->SetFillColor(190, 190, 190);
+                $this->SetFillColor(230, 230, 230);
             }
             else{
-                $this->SetFillColor(245, 245, 245);
+                $this->SetFillColor(255, 255, 255);
             }
             //drawing data into the cell and get the maximum row height
             $fill_height = $this->getRowHeightByFillData($col_data);
             //filling the cell with background color that overlaps the data 
             //those are drawn before
             //now we have to draw the data again
-            $this->fillBackGroundColor($col_data, $fill_height);
+            $this->fillBackGroundColor($col_data, $fill_height, $this->page_first_row);
             //drawing data and set next line
             $this->addRow($col_data);
             $row_count ++;
+            $this->page_first_row = false;
         }
     }
+    
 
-    function getEssentialRowHeight($col_data) {
-        $max_height = 0;
-        for ($i = 0; $i < count($col_data); $i++) {
-            $max_height = max($max_height, $this->NbLines($col_data[$i]['cell_width'], $col_data[$i]['cell_value']));
-        }
-
-        //To calculate the row_height we need to multiply max_height by 5
-        //but I don't know why
-        //I hv gotten it from a tutorial
-        return 5 * $max_height;
-    }
-
-    function CheckPageBreak($height, $header_height = 20, $footer_height = 0) {
-        //If the height would cause an overflow, 
-        //add a new page immediately
-        if ($this->GetY() + $height + $footer_height> $this->PageBreakTrigger) {
-            $this->AddPage($this->CurOrientation);
-            $this->ln( $header_height );
-        }
-    }
 
     // Page header
     function Header() {
