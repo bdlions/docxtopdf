@@ -71,7 +71,7 @@ class RiskRegisterPDF extends PDF {
        
         
         $this->SetXY($this->GetX(), 34);
-        $this->SetFont('Times', '', 12);
+        $this->SetFont('Times', 'B', 12);
         $this->SetTextColor(27,161,226);
         $this->Cell(0, DEFAULT_CELL_HEIGHT, "Firm: " . $this->firm_name, 0, 1);
         $this->Cell(0, DEFAULT_CELL_HEIGHT, "Date: " . $this->report_date, 0, 1);
@@ -123,7 +123,7 @@ class RiskRegisterPDF extends PDF {
                 $this->SetFillColor(190, 190, 190);
             }
             else{
-                $this->SetFillColor(255, 255, 255);
+                $this->SetFillColor(245, 245, 245);
             }
             //drawing data into the cell and get the maximum row height
             $fill_height = $this->getRowHeightByFillData($col_data);
