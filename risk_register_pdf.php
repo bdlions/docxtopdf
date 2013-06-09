@@ -30,8 +30,8 @@ class RiskRegisterPDF extends PDF {
     var $date_para;
     var $colorConverter;
 
-    public function __construct() {
-        parent::__construct();
+    function __construct($orientation='P', $unit='mm', $size='A4') {
+        parent::__construct($orientation, $unit, $size);
         
         $this->header = new Header(null);
         $this->footer = new Footer(null);

@@ -3,7 +3,7 @@
     include 'risk_register_pdf.php';
 
     $xml = new XMLParser();
-    $pdf = new RiskRegisterPDF();
+    $pdf = new RiskRegisterPDF('P','mm','Letter');
 
     $xml->load_file('xml/'.trim($_POST['xmlName']));
     $isvalid = $xml->validate_xml('schema/riskRegister.xsd');

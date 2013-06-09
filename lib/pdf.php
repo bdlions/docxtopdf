@@ -8,6 +8,9 @@ require('lib/fpdf.php');
 
 class PDF extends FPDF {
 
+    function __construct($orientation='P', $unit='mm', $size='A3') {
+        parent::__construct($orientation, $unit, $size);
+    }
     function NbLines($w, $txt) {
         //Computes the number of lines a MultiCell of width w will take
         $cw = &$this->CurrentFont['cw'];
