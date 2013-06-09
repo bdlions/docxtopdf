@@ -42,6 +42,7 @@ class RiskRegisterPDF extends PDF {
         $this->date_para= new Paragraph(null);
         $this->colorConverter = new ColorConverter();
         
+        
     }
     
     public function load_data($data, $styles) {
@@ -90,6 +91,7 @@ class RiskRegisterPDF extends PDF {
                 }
             }
         }
+        //print_r($this->table->cols);
     }
 
     function processRiskRegister($riskRegister) {
@@ -129,10 +131,10 @@ class RiskRegisterPDF extends PDF {
         $this->Cell(0, DEFAULT_CELL_HEIGHT, "Date: " . $this->report_date, 0, 1);
         
         $this->SetAutoPageBreak(false);
-        $this->SetFont('Times', '', 12);
-        $this->SetTextColor(0,0,0);
+        //$this->SetFont('Times', '', 12);
+        //$this->SetTextColor(0,0,0);
 
-        $this->SetDrawColor(190, 190, 190);
+        //$this->SetDrawColor(190, 190, 190);
 
         $row_count = 1;
         $col_data = array();
@@ -149,16 +151,16 @@ class RiskRegisterPDF extends PDF {
 
             $col_data = array();
             array_push($col_data, 
-                    array('cell_width' => 15, 'cell_value' => $sra_riks_id), 
-                    array('cell_width' => DEFAULT_CELL_WIDTH, 'cell_value' => $date), 
-                    array('cell_width' => DEFAULT_CELL_WIDTH, 'cell_value' => $source_register), 
-                    array('cell_width' => DEFAULT_CELL_WIDTH, 'cell_value' => $practice_area), 
-                    array('cell_width' => DEFAULT_CELL_WIDTH, 'cell_value' => $trigger_event), 
-                    array('cell_width' => DEFAULT_CELL_WIDTH, 'cell_value' => $compliance_officer), 
-                    array('cell_width' => DEFAULT_CELL_WIDTH, 'cell_value' => $action_taken), 
-                    array('cell_width' => DEFAULT_CELL_WIDTH, 'cell_value' => $comments)
+                    array('id' => SRA_RISK_ID, 'cell_width' => 15, 'cell_value' => $sra_riks_id, 'cell_style'=>  $this->getColumnStyleById(SRA_RISK_ID)), 
+                    array('id' => DATE, 'cell_width' => DEFAULT_CELL_WIDTH, 'cell_value' => $date, 'cell_style'=>  $this->getColumnStyleById(DATE)), 
+                    array('id' => SOURCE_REGISTER, 'cell_width' => DEFAULT_CELL_WIDTH, 'cell_value' => $source_register, 'cell_style'=>  $this->getColumnStyleById(SOURCE_REGISTER)), 
+                    array('id' => PRACTICE_AREA, 'cell_width' => DEFAULT_CELL_WIDTH, 'cell_value' => $practice_area, 'cell_style'=>  $this->getColumnStyleById(PRACTICE_AREA)), 
+                    array('id' => TRIGGER_EVENT, 'cell_width' => DEFAULT_CELL_WIDTH, 'cell_value' => $trigger_event, 'cell_style'=>  $this->getColumnStyleById(TRIGGER_EVENT)), 
+                    array('id' => COMPLIANCE_OFFICER, 'cell_width' => DEFAULT_CELL_WIDTH, 'cell_value' => $compliance_officer, 'cell_style'=>  $this->getColumnStyleById(COMPLIANCE_OFFICER)), 
+                    array('id' => ACTION_TAKEN, 'cell_width' => DEFAULT_CELL_WIDTH, 'cell_value' => $action_taken, 'cell_style'=>  $this->getColumnStyleById(ACTION_TAKEN)), 
+                    array('id' => COMMENTS, 'cell_width' => DEFAULT_CELL_WIDTH, 'cell_value' => $comments, 'cell_style'=>  $this->getColumnStyleById(COMMENTS))
             );
-
+            
             //the height that we need to add new row
             $row_height = $this->getEssentialRowHeight($col_data);
 
@@ -167,6 +169,11 @@ class RiskRegisterPDF extends PDF {
                 $this->addPageBreak($row_height, $this->header_height, $this->footer_height);
                 $this->page_first_row = true;
             }
+            
+            if($this->page_first_row == true){
+                $this->addTableHeader($this->table->header, $col_data);
+            }
+            
             if($row_count % 2 == 0){
                 $this->colorConverter->convertHex2RGB($this->table->alternateRowBackColor->even_row_color);
                 $this->SetFillColor($this->colorConverter->r, $this->colorConverter->g, $this->colorConverter->b);
@@ -188,7 +195,14 @@ class RiskRegisterPDF extends PDF {
         }
     }
     
-
+    function getColumnStyleById($id){
+        foreach ($this->table->cols as $value) {
+            if($value['id'] == $id){
+                return $value;
+            }
+        }
+        return false;
+    }
 
     // Page header
     function Header() {

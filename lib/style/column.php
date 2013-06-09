@@ -11,6 +11,7 @@
  * @author Alamgir
  */
 class Column {
+    var $id;
     var $header_text;
     var $font_weight = "";
     var $font_color = "#000000";
@@ -19,12 +20,13 @@ class Column {
     var $text_align = "L";
     
     public function __construct($col){
+        $this->id = $col['id'];
         $this->header_text = $col['header_text'];
         $this->font_weight = $col['font']['weight'];
         $this->font_color = $col['font']['color'];
         $this->font_family = $col['font']['font_name'];
         $this->font_size = $col['font']['size'];
-        $this->text_align = $col['font']['textt_align'];
+        $this->text_align = $col['font']['text_align'];
     }
 }
 

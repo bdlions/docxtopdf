@@ -109,7 +109,13 @@ class PDF extends FPDF {
             $yBeforeCell = $this->GetY();
             $borders = "";
             //$borders = 'LB' . ($col + 1 == count($col_data) ? 'R' : ''); // Only add R for last col
-            $this->MultiCell($col_data[$col]['cell_width'], DEFAULT_CELL_HEIGHT, $col_data[$col]['cell_value'], $borders, 'L', false);
+            $column_style = new Column($col_data[$col]['cell_style']);
+            
+            $this->SetFont($column_style->font_family, $column_style->font_weight, $column_style->font_size);
+            $this->colorConverter->convertHex2RGB($column_style->font_color);
+            $this->SetTextColor($this->colorConverter->r, $this->colorConverter->g, $this->colorConverter->b);
+        
+            $this->MultiCell($col_data[$col]['cell_width'], DEFAULT_CELL_HEIGHT, $col_data[$col]['cell_value'], $borders, $column_style->text_align, false);
 
             $yCurrent = $this->GetY();
             $rowHeight = $yCurrent - $yBeforeCell;
@@ -128,6 +134,49 @@ class PDF extends FPDF {
         $this->Ln($maxRowHeight);
     }
 
+    function calTHeaderHeightAndSetText($style, $col_data){
+                $start_x_pos = $this->GetX();
+        $start_y_pos = $this->GetY();
+
+        $x = $this->GetX();
+        $maxRowHeight = 0;
+        
+        $this->colorConverter->convertHex2RGB($style->background_color);
+        $this->SetFillColor($this->colorConverter->r, $this->colorConverter->g, $this->colorConverter->b);
+        for ($col = 0; $col < count($col_data); $col++) {
+
+            $yBeforeCell = $this->GetY();
+            $borders = "";
+            //$borders = 'LB' . ($col + 1 == count($col_data) ? 'R' : ''); // Only add R for last col
+            //$column_style = new Column($col_data[$col]['cell_style']);
+            
+            $this->SetFont($style->font_family, $style->font_weight, $style->font_size);
+            $this->colorConverter->convertHex2RGB($style->font_color);
+            $this->SetTextColor($this->colorConverter->r, $this->colorConverter->g, $this->colorConverter->b);
+        
+            $this->MultiCell($col_data[$col]['cell_width'], DEFAULT_CELL_HEIGHT, $col_data[$col]['cell_style']['header_text'], $borders, $style->text_align, false);
+
+            $yCurrent = $this->GetY();
+            $rowHeight = $yCurrent - $yBeforeCell;
+            if ($maxRowHeight < $rowHeight) {
+                $maxRowHeight = $rowHeight;
+            }
+            $this->SetXY($x + $col_data[$col]['cell_width'], $yCurrent - $rowHeight);
+            $x = $this->GetX();
+        }
+        $this->SetXY($start_x_pos, $start_y_pos);
+        
+        return $maxRowHeight;
+    }
+    
+    function addTableHeader($style, $col_data) {
+        $maxRowHeight = $this->calTHeaderHeightAndSetText($style, $col_data);
+        $this->fillBackGroundColor($col_data, $maxRowHeight, true);
+        $this->calTHeaderHeightAndSetText($style, $col_data);
+        $this->Ln($maxRowHeight);
+    }
+
+    
     function getCellValue($obj, $name) {
         return isset($obj[$name]) == true ? is_array($obj[$name]) == true ? "" : $obj[$name]  : "";
     }
