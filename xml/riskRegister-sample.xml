@@ -1,202 +1,171 @@
-<?xml version="1.0" encoding="utf-8"?>
-<sample:report-request
-    xmlns:sample="http://lexsure.com/ns/Report/2013">
-    <sample:report-request-id>report-request-id</sample:report-request-id>
-    <sample:firm-id>firm-id</sample:firm-id>
-    <sample:firm-name>firm-name</sample:firm-name>
-    <sample:risk-register>
-        <sample:report-date>report-date</sample:report-date>
-        <sample:risk-register-rows>
-            <sample:risk-register-row>
-                <sample:sra-risk-id>sra-risk-id</sample:sra-risk-id>
-                <sample:date>2006-05-31</sample:date>
-                <sample:source-register>source-register</sample:source-register>
-                <sample:practice-area>practice-area</sample:practice-area>
-                <sample:trigger-event>trigger-event</sample:trigger-event>
-                <sample:compliance-officer>compliance-officer</sample:compliance-officer>
-                <sample:action-taken>action-taken</sample:action-taken>
-                <sample:comments>comments</sample:comments>
-            </sample:risk-register-row>
-            <sample:risk-register-row>
-                <sample:sra-risk-id>sra-risk-id</sample:sra-risk-id>
-                <sample:date>2006-05-31</sample:date>
-                <sample:source-register>source-register</sample:source-register>
-                <sample:practice-area>practice-area</sample:practice-area>
-                <sample:trigger-event>trigger-event</sample:trigger-event>
-                <sample:compliance-officer>compliance-officer</sample:compliance-officer>
-                <sample:action-taken>action-taken</sample:action-taken>
-                <sample:comments>comments</sample:comments>
-            </sample:risk-register-row>
-            <sample:risk-register-row>
-                <sample:sra-risk-id>sra-risk-id</sample:sra-risk-id>
-                <sample:date>2006-05-31</sample:date>
-                <sample:source-register>source-register</sample:source-register>
-                <sample:practice-area>practice-area</sample:practice-area>
-                <sample:trigger-event>trigger-event</sample:trigger-event>
-                <sample:compliance-officer>compliance-officer</sample:compliance-officer>
-                <sample:action-taken>action-taken</sample:action-taken>
-                <sample:comments>comments</sample:comments>
-            </sample:risk-register-row>
-            <sample:risk-register-row>
-                <sample:sra-risk-id>sra-risk-id</sample:sra-risk-id>
-                <sample:date>2006-05-31</sample:date>
-                <sample:source-register>source-register</sample:source-register>
-                <sample:practice-area>practice-area</sample:practice-area>
-                <sample:trigger-event>trigger-event</sample:trigger-event>
-                <sample:compliance-officer>compliance-officer</sample:compliance-officer>
-                <sample:action-taken>action-taken</sample:action-taken>
-                <sample:comments>comments</sample:comments>
-            </sample:risk-register-row>
-            <sample:risk-register-row>
-                <sample:sra-risk-id>sra-risk-id</sample:sra-risk-id>
-                <sample:date>2006-05-31</sample:date>
-                <sample:source-register>source-register</sample:source-register>
-                <sample:practice-area>practice-area</sample:practice-area>
-                <sample:trigger-event>trigger-event</sample:trigger-event>
-                <sample:compliance-officer>compliance-officer</sample:compliance-officer>
-                <sample:action-taken>action-taken</sample:action-taken>
-                <sample:comments>comments</sample:comments>
-            </sample:risk-register-row>
-            <sample:risk-register-row>
-                <sample:sra-risk-id>sra-risk-id</sample:sra-risk-id>
-                <sample:date>2006-05-31</sample:date>
-                <sample:source-register>source-register</sample:source-register>
-                <sample:practice-area>practice-area</sample:practice-area>
-                <sample:trigger-event>trigger-event</sample:trigger-event>
-                <sample:compliance-officer>compliance-officer</sample:compliance-officer>
-                <sample:action-taken>action-taken</sample:action-taken>
-                <sample:comments>comments</sample:comments>
-            </sample:risk-register-row>
-            <sample:risk-register-row>
-                <sample:sra-risk-id>sra-risk-id</sample:sra-risk-id>
-                <sample:date>2006-05-31</sample:date>
-                <sample:source-register>source-register</sample:source-register>
-                <sample:practice-area>practice-area</sample:practice-area>
-                <sample:trigger-event>trigger-event</sample:trigger-event>
-                <sample:compliance-officer>compliance-officer</sample:compliance-officer>
-                <sample:action-taken>action-taken</sample:action-taken>
-                <sample:comments>comments</sample:comments>
-            </sample:risk-register-row>
-            <sample:risk-register-row>
-                <sample:sra-risk-id>sra-risk-id</sample:sra-risk-id>
-                <sample:date>2006-05-31</sample:date>
-                <sample:source-register>source-register</sample:source-register>
-                <sample:practice-area>practice-area</sample:practice-area>
-                <sample:trigger-event>trigger-event</sample:trigger-event>
-                <sample:compliance-officer>compliance-officer</sample:compliance-officer>
-                <sample:action-taken>action-taken</sample:action-taken>
-                <sample:comments>comments</sample:comments>
-            </sample:risk-register-row>
-            <sample:risk-register-row>
-                <sample:sra-risk-id>sra-risk-id</sample:sra-risk-id>
-                <sample:date>2006-05-31</sample:date>
-                <sample:source-register>source-register</sample:source-register>
-                <sample:practice-area>practice-area</sample:practice-area>
-                <sample:trigger-event>trigger-event</sample:trigger-event>
-                <sample:compliance-officer>compliance-officer</sample:compliance-officer>
-                <sample:action-taken>action-taken</sample:action-taken>
-                <sample:comments>comments</sample:comments>
-            </sample:risk-register-row>
-            <sample:risk-register-row>
-                <sample:sra-risk-id>sra-risk-id</sample:sra-risk-id>
-                <sample:date>2006-05-31</sample:date>
-                <sample:source-register>source-register</sample:source-register>
-                <sample:practice-area>practice-area</sample:practice-area>
-                <sample:trigger-event>trigger-event</sample:trigger-event>
-                <sample:compliance-officer>compliance-officer</sample:compliance-officer>
-                <sample:action-taken>action-taken</sample:action-taken>
-                <sample:comments>comments</sample:comments>
-            </sample:risk-register-row>
-            <sample:risk-register-row>
-                <sample:sra-risk-id>sra-risk-id</sample:sra-risk-id>
-                <sample:date>2006-05-31</sample:date>
-                <sample:source-register>source-register</sample:source-register>
-                <sample:practice-area>practice-area</sample:practice-area>
-                <sample:trigger-event>trigger-event</sample:trigger-event>
-                <sample:compliance-officer>compliance-officer</sample:compliance-officer>
-                <sample:action-taken>action-taken</sample:action-taken>
-                <sample:comments>comments</sample:comments>
-            </sample:risk-register-row>
-            <sample:risk-register-row>
-                <sample:sra-risk-id>sra-risk-id</sample:sra-risk-id>
-                <sample:date>2006-05-31</sample:date>
-                <sample:source-register>source-register</sample:source-register>
-                <sample:practice-area>practice-area</sample:practice-area>
-                <sample:trigger-event>trigger-event</sample:trigger-event>
-                <sample:compliance-officer>compliance-officer</sample:compliance-officer>
-                <sample:action-taken>action-taken</sample:action-taken>
-                <sample:comments>comments</sample:comments>
-            </sample:risk-register-row>
-            <sample:risk-register-row>
-                <sample:sra-risk-id>sra-risk-id</sample:sra-risk-id>
-                <sample:date>2006-05-31</sample:date>
-                <sample:source-register>source-register</sample:source-register>
-                <sample:practice-area>practice-area</sample:practice-area>
-                <sample:trigger-event>trigger-event</sample:trigger-event>
-                <sample:compliance-officer>compliance-officer</sample:compliance-officer>
-                <sample:action-taken>action-taken</sample:action-taken>
-                <sample:comments>comments</sample:comments>
-            </sample:risk-register-row>
-            <sample:risk-register-row>
-                <sample:sra-risk-id>sra-risk-id</sample:sra-risk-id>
-                <sample:date>2006-05-31</sample:date>
-                <sample:source-register>source-register</sample:source-register>
-                <sample:practice-area>practice-area</sample:practice-area>
-                <sample:trigger-event>trigger-event</sample:trigger-event>
-                <sample:compliance-officer>compliance-officer</sample:compliance-officer>
-                <sample:action-taken>action-taken</sample:action-taken>
-                <sample:comments>comments</sample:comments>
-            </sample:risk-register-row>
-            <sample:risk-register-row>
-                <sample:sra-risk-id>sra-risk-id</sample:sra-risk-id>
-                <sample:date>2006-05-31</sample:date>
-                <sample:source-register>source-register</sample:source-register>
-                <sample:practice-area>practice-area</sample:practice-area>
-                <sample:trigger-event>trigger-event</sample:trigger-event>
-                <sample:compliance-officer>compliance-officer</sample:compliance-officer>
-                <sample:action-taken>action-taken</sample:action-taken>
-                <sample:comments>comments</sample:comments>
-            </sample:risk-register-row>
-            <sample:risk-register-row>
-                <sample:sra-risk-id>sra-risk-id</sample:sra-risk-id>
-                <sample:date>2006-05-31</sample:date>
-                <sample:source-register>source-register</sample:source-register>
-                <sample:practice-area>practice-area</sample:practice-area>
-                <sample:trigger-event>trigger-event</sample:trigger-event>
-                <sample:compliance-officer>compliance-officer</sample:compliance-officer>
-                <sample:action-taken>action-taken</sample:action-taken>
-                <sample:comments>comments</sample:comments>
-            </sample:risk-register-row>
-            <sample:risk-register-row>
-                <sample:sra-risk-id>sra-risk-id</sample:sra-risk-id>
-                <sample:date>2006-05-31</sample:date>
-                <sample:source-register>source-register</sample:source-register>
-                <sample:practice-area>practice-area</sample:practice-area>
-                <sample:trigger-event>trigger-event</sample:trigger-event>
-                <sample:compliance-officer>compliance-officer</sample:compliance-officer>
-                <sample:action-taken>action-taken</sample:action-taken>
-                <sample:comments>comments</sample:comments>
-            </sample:risk-register-row>
-            <sample:risk-register-row>
-                <sample:sra-risk-id>sra-risk-id</sample:sra-risk-id>
-                <sample:date>2006-05-31</sample:date>
-                <sample:source-register>source-register</sample:source-register>
-                <sample:practice-area>practice-area</sample:practice-area>
-                <sample:trigger-event>trigger-event</sample:trigger-event>
-                <sample:compliance-officer>compliance-officer</sample:compliance-officer>
-                <sample:action-taken>action-taken</sample:action-taken>
-                <sample:comments>comments</sample:comments>
-            </sample:risk-register-row>
-            <sample:risk-register-row>
-                <sample:sra-risk-id>sra-risk-id</sample:sra-risk-id>
-                <sample:date>2006-05-31</sample:date>
-                <sample:source-register>source-register</sample:source-register>
-                <sample:practice-area>practice-area</sample:practice-area>
-                <sample:trigger-event>trigger-event</sample:trigger-event>
-                <sample:compliance-officer>compliance-officer</sample:compliance-officer>
-                <sample:action-taken>action-taken</sample:action-taken>
-                <sample:comments>comments</sample:comments>
-            </sample:risk-register-row>
-        </sample:risk-register-rows>
-    </sample:risk-register>
-</sample:report-request>
+<?xml version="1.0" encoding="UTF-8"?>
+<report-request xmlns="http://lexsure.com/ns/Report/2013">
+  <report-request-id>5976265</report-request-id>
+  <firm-id>396</firm-id>
+  <firm-name>Smith Law LLP</firm-name>
+  <risk-register>
+    <report-date>March 2013</report-date>
+    <risk-register-rows>
+      <risk-register-row>
+		<sra-risk-id>37</sra-risk-id>
+		<date>2012-11-30</date>
+		<source-register>Complaints</source-register>
+		<practice-area>Employment</practice-area>
+		<trigger-event>Complaints on increase</trigger-event>
+		<compliance-officer>COLP</compliance-officer>
+		<action-taken>Dept over worked. Urgent recruitment initiative underway</action-taken>
+		<comments>See entry in compliance plan for Feb13</comments>
+      </risk-register-row>
+      <risk-register-row>
+		<sra-risk-id>59</sra-risk-id>
+		<date>2013-01-03</date>
+		<source-register>Conflicts</source-register>
+		<practice-area>Reading office</practice-area>
+		<trigger-event>Acting for buyer and seller</trigger-event>
+		<compliance-officer>COLP</compliance-officer>
+		<action-taken>Identify all similar cases. Review policy</action-taken>
+		<comments>Entry in compliance plan for April 2013.</comments>
+      </risk-register-row>
+	  <risk-register-row>
+		<sra-risk-id>349</sra-risk-id>
+		<date>2013-02-01</date>
+		<source-register>Client care</source-register>
+		<practice-area>Client Care letters</practice-area>
+		<trigger-event>LeO changes</trigger-event>
+		<compliance-officer>COLP</compliance-officer>
+		<action-taken>CCLs updated</action-taken>
+		<comments>Check updated content on next file reviews</comments>
+      </risk-register-row>	
+	  <risk-register-row>
+		<sra-risk-id>207</sra-risk-id>
+		<date>2013-02-01</date>
+		<source-register>Client Account</source-register>
+		<practice-area>Basingstoke office</practice-area>
+		<trigger-event>High number of historic balances</trigger-event>
+		<compliance-officer>COFA</compliance-officer>
+		<action-taken>See compliance plan</action-taken>
+		<comments>See entry on compliance plan</comments>
+      </risk-register-row>
+	  <risk-register-row>
+		<sra-risk-id>354</sra-risk-id>
+		<date>2013-02-14</date>
+		<source-register>Business continuity</source-register>
+		<practice-area>All</practice-area>
+		<trigger-event>Calling tree out of date. No test for 2 years</trigger-event>
+		<compliance-officer>COLP</compliance-officer>
+		<action-taken></action-taken>
+		<comments>Entry on compliance plan for review in May</comments>
+      </risk-register-row>
+	  <risk-register-row>
+		<sra-risk-id>341</sra-risk-id>
+		<date>2013-02-21</date>
+		<source-register>Client care</source-register>
+		<practice-area>Client surveys</practice-area>
+		<trigger-event>Low number sent out to clients</trigger-event>
+		<compliance-officer>COLP</compliance-officer>
+		<action-taken>COLP to draft policy after liaison with team leaders</action-taken>
+		<comments>Email sent to FEST. Tasks added to compliance plan</comments>
+      </risk-register-row>
+	  <risk-register-row>
+		<sra-risk-id>292</sra-risk-id>
+		<date>2013-03-06</date>
+		<source-register>Referral fees</source-register>
+		<practice-area>PI</practice-area>
+		<trigger-event>Imminent ban</trigger-event>
+		<compliance-officer>CghOLP</compliance-officer>
+		<action-taken>All arrangements with referrers to be reviewed</action-taken>
+		<comments>Discussed with PI HOD. Entry made on compliance plan.</comments>
+      </risk-register-row>
+	  <risk-register-row>
+		<sra-risk-id>354</sra-risk-id>
+		<date>2013-02-14</date>
+		<source-register>Business continuity</source-register>
+		<practice-area>All</practice-area>
+		<trigger-event>Calling tree out of date. No test for 2 years</trigger-event>
+		<compliance-officer>COLP</compliance-officer>
+		<action-taken></action-taken>
+		<comments>Entry on compliance plan for review in May</comments>
+      </risk-register-row>
+	  <risk-register-row>
+		<sra-risk-id>341</sra-risk-id>
+		<date>2013-02-21</date>
+		<source-register>Client care</source-register>
+		<practice-area>Client surveys</practice-area>
+		<trigger-event>Low number sent out to clients</trigger-event>
+		<compliance-officer>COLP</compliance-officer>
+		<action-taken>COLP to draft policy after liaison with team leaders</action-taken>
+		<comments>Email sent to FEST. Tasks added to compliance plan</comments>
+      </risk-register-row>
+	  <risk-register-row>
+		<sra-risk-id>292</sra-risk-id>
+		<date>2013-03-06</date>
+		<source-register>Referral fees</source-register>
+		<practice-area>PI</practice-area>
+		<trigger-event>Imminent ban</trigger-event>
+		<compliance-officer>COLP</compliance-officer>
+		<action-taken>All arrangements with referrers to be reviewed</action-taken>
+		<comments>Discussed with PI HOD. Entry made on compliance plan.</comments>
+      </risk-register-row>
+	  <risk-register-row>
+		<sra-risk-id>354</sra-risk-id>
+		<date>2013-02-14</date>
+		<source-register>Business continuity</source-register>
+		<practice-area>All</practice-area>
+		<trigger-event>Calling tree out of date. No test for 2 years</trigger-event>
+		<compliance-officer>COLP</compliance-officer>
+		<action-taken></action-taken>
+		<comments>Entry on compliance plan for review in May</comments>
+      </risk-register-row>
+	  <risk-register-row>
+		<sra-risk-id>341</sra-risk-id>
+		<date>2013-02-21</date>
+		<source-register>Client care</source-register>
+		<practice-area>Client surveys</practice-area>
+		<trigger-event>Low number sent out to clients</trigger-event>
+		<compliance-officer>COLP</compliance-officer>
+		<action-taken>COLP to draft policy after liaison with team leaders</action-taken>
+		<comments>Email sent to FEST. Tasks added to compliance plan</comments>
+      </risk-register-row>
+	  <risk-register-row>
+		<sra-risk-id>292</sra-risk-id>
+		<date>2013-03-06</date>
+		<source-register>Referral fees</source-register>
+		<practice-area>PI</practice-area>
+		<trigger-event>Imminent ban</trigger-event>
+		<compliance-officer>COLP</compliance-officer>
+		<action-taken>All arrangements with referrers to be reviewed</action-taken>
+		<comments>Discussed with PI HOD. Entry made on compliance plan.</comments>
+      </risk-register-row>
+	  <risk-register-row>
+		<sra-risk-id>354</sra-risk-id>
+		<date>2013-02-14</date>
+		<source-register>Business continuity</source-register>
+		<practice-area>All</practice-area>
+		<trigger-event>Calling tree out of date. No test for 2 years</trigger-event>
+		<compliance-officer>COLP</compliance-officer>
+		<action-taken></action-taken>
+		<comments>Entry on compliance plan for review in May</comments>
+      </risk-register-row>
+	  <risk-register-row>
+		<sra-risk-id>341</sra-risk-id>
+		<date>2013-02-21</date>
+		<source-register>Client care</source-register>
+		<practice-area>Client surveys</practice-area>
+		<trigger-event>Low number sent out to clients</trigger-event>
+		<compliance-officer>COLP</compliance-officer>
+		<action-taken>COLP to draft policy after liaison with team leaders</action-taken>
+		<comments>Email sent to FEST. Tasks added to compliance plan</comments>
+      </risk-register-row>
+	  <risk-register-row>
+		<sra-risk-id>292</sra-risk-id>
+		<date>2013-03-06</date>
+		<source-register>Referral fees</source-register>
+		<practice-area>PI</practice-area>
+		<trigger-event>Imminent ban</trigger-event>
+		<compliance-officer>COLP</compliance-officer>
+		<action-taken>All arrangements with referrers to be reviewed</action-taken>
+		<comments>Discussed with PI HOD. Entry made on compliance plan.</comments>
+      </risk-register-row>
+    </risk-register-rows>    
+  </risk-register>
+</report-request>

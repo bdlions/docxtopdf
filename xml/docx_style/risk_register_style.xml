@@ -5,51 +5,51 @@
     </header>
     <paragraphs>
         <paragraph id="risk_register" backgournd_color="#FFFFFF">
-            <font weight="" color="#FF0000" font_name ="Times" size="20">
+            <font weight="" color="#17365D" font_name ="Times" size="26">
                 Risk Register
             </font>
         </paragraph>
         <paragraph id="firm" backgournd_color="#FFFFFF">
-            <font weight="" color="#000000" font_name ="Times" size="12">
+            <font weight="B" color="#4F81BD" font_name ="Times" size="13">
                 Firm:
             </font>
         </paragraph>
         <paragraph id="date" backgournd_color="#FFFFFF">
-            <font weight="" color="#000000" font_name ="Times" size="12">
+            <font weight="B" color="#4F81BD" font_name ="Times" size="12">
                 Date:
             </font>
         </paragraph>
      </paragraphs>
     <table>
-        <header backgournd_color="#00FFFF">
-            <font weight="BI" color="#000000" font_name="Times" size="14" text_align="C"></font>
+        <header backgournd_color="#4F81BD">
+            <font weight="B" color="#FFFFFF" font_name="Times" size="12" text_align="C"></font>
         </header>
-        <alternateBackgroundColor odd-row="#E6E6E6" even-row="#FFFFFF"></alternateBackgroundColor>
+        <alternateBackgroundColor odd-row="#D9D9D9" even-row="#FFFFFF"></alternateBackgroundColor>
         <row>
             <cols>
                 <col id="sra-risk-id" header_text = "SRA Risk ID">
-                    <font weight="B" color="#000000" font_name="Times" size="12" text_align="C"></font>
-                </col>
-                <col id="date" header_text = "Date">
-                    <font weight="I" color="#000000" font_name="Times" size="12" text_align="C"></font>
-                </col>
-                <col id="source-register" header_text = "Source register">
-                    <font weight="" color="#000000" font_name="Times" size="12" text_align="C"></font>
-                </col>
-                <col id="practice-area" header_text = "Practice area">
-                    <font weight="BI" color="#000000" font_name="Times" size="12" text_align="R"></font>
-                </col>
-                <col id="trigger-event" header_text = "Trigger event">
                     <font weight="" color="#000000" font_name="Times" size="12" text_align="R"></font>
                 </col>
-                <col id="compliance-officer" header_text = "Compliance officer">
+                <col id="date" header_text = "Date">
+                    <font weight="" color="#000000" font_name="Times" size="12" text_align="C"></font>
+                </col>
+                <col id="source-register" header_text = "Source register">
                     <font weight="" color="#000000" font_name="Times" size="12" text_align="L"></font>
+                </col>
+                <col id="practice-area" header_text = "Practice area">
+                    <font weight="" color="#000000" font_name="Times" size="12" text_align="L"></font>
+                </col>
+                <col id="trigger-event" header_text = "Trigger event">
+                    <font weight="" color="#000000" font_name="Times" size="12" text_align="L"></font>
+                </col>
+                <col id="compliance-officer" header_text = "Compliance officer">
+                    <font weight="" color="#000000" font_name="Times" size="12" text_align="C"></font>
                 </col>
                 <col id="action-taken" header_text = "Immediate action taken to manage the risk and date">
                     <font weight="" color="#000000" font_name="Times" size="12" text_align="L"></font>
                 </col>
                 <col id="comments" header_text = "Comments">
-                    <font weight="" color="#000000" font_name="Times" size="12" text_align="R"></font>
+                    <font weight="" color="#000000" font_name="Times" size="12" text_align="L"></font>
                 </col>
             </cols>
         </row>
