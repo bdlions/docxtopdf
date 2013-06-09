@@ -17,7 +17,7 @@ class Table {
     var $alternateRowBackColor;
     var $cols;
     var $border_color = "#000000";
-    var $border_width = 0.5;
+    var $border_width = 0.4;
     
     public function __construct( $table){
         if($table){
@@ -25,7 +25,7 @@ class Table {
             $this->alternateRowBackColor = new AlternateRowBackColor($table[ALTERNATE_BACKGROUND_COLOR]);
             $this->cols = $table[ROW][COLUMNS];          
             $this->border_color = $table['border_color'];
-            $this->border_widht = $table['border_width'];
+            $this->border_width = floatval($table['border_width']);
         }
     }
 }
