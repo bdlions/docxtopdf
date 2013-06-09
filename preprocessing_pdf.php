@@ -5,7 +5,7 @@
     $xml = new XMLParser();
     $pdf = new RiskRegisterPDF('P','mm','Letter');
 
-    $pdf->$pdf->AddFont('calibri','','calibri.php');
+    $pdf->AddFont('calibri','');
     $xml->load_file('xml/'.trim($_POST['xmlName']));
     $isvalid = $xml->validate_xml('schema/riskRegister.xsd');
         
