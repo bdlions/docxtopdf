@@ -20,7 +20,7 @@
             </font>
         </paragraph>
      </paragraphs>
-    <table>
+    <table border_color="#000000" border_width="0.5">
         <header backgournd_color="#4F81BD">
             <font weight="B" color="#FFFFFF" font_name="Times" size="12" text_align="C"></font>
         </header>

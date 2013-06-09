@@ -63,13 +63,7 @@ class PDF extends FPDF {
         $y = $this->GetY();
 
         for ($col = 0; $col < count($col_data); $col++) {
-            $borders = 'B';
-            if($is_first_row){
-                $borders = count($col_data) - 1 == $col?$borders.'R':$borders;
-            }
-            else{
-                $borders = $borders."R";
-            }
+            $borders = 'RB';
             $borders = $col == 0?$borders.'L':$borders;
             $borders = $is_first_row == true? $borders.'T':$borders;
             

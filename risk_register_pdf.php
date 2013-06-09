@@ -109,7 +109,7 @@ class RiskRegisterPDF extends PDF {
 
     function generate_pdf() {
         
-       
+
         $this->SetFont($this->risk_register_para->font_family, $this->risk_register_para->font_weight, $this->risk_register_para->font_size);
         $this->colorConverter->convertHex2RGB($this->risk_register_para->font_color);
         $this->SetTextColor($this->colorConverter->r, $this->colorConverter->g, $this->colorConverter->b);
@@ -171,9 +171,18 @@ class RiskRegisterPDF extends PDF {
             }
             
             if($this->page_first_row == true){
+                $this->colorConverter->convertHex2RGB($this->table->header->background_color);
+                $style = array('width' => $this->table->border_width, 'color' => array($this->colorConverter->r, $this->colorConverter->g, $this->colorConverter->b));
+                $this->SetLineStyle($style);
+                
                 $this->addTableHeader($this->table->header, $col_data);
                 $this->page_first_row = false;
             }
+            
+            $this->colorConverter->convertHex2RGB($this->table->border_color);
+            $style = array('width' => $this->table->border_width, 'color' => array($this->colorConverter->r, $this->colorConverter->g, $this->colorConverter->b));
+            $this->SetLineStyle($style);
+            
             
             if($row_count % 2 == 0){
                 $this->colorConverter->convertHex2RGB($this->table->alternateRowBackColor->even_row_color);
