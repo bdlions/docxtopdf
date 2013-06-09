@@ -5,6 +5,7 @@
     $xml = new XMLParser();
     $pdf = new RiskRegisterPDF('P','mm','Letter');
 
+    $pdf->$pdf->AddFont('calibri','','calibri.php');
     $xml->load_file('xml/'.trim($_POST['xmlName']));
     $isvalid = $xml->validate_xml('schema/riskRegister.xsd');
         
@@ -15,11 +16,11 @@
     
     if($isvalid != true){
         print_r($isvalid);
-        die("Validation error");
+        //die("Validation error");
     }
     if($isvalid_style != true){
         print_r($isvalid_style);
-        die("validation erro");
+        //die("validation erro");
     }
     
     if ($isvalid === true && $isvalid_style == true) {
