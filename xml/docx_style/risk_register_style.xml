@@ -10,12 +10,12 @@
             </font>
         </paragraph>
         <paragraph id="firm" backgournd_color="#FFFFFF">
-            <font weight="B" color="#4F81BD" font_name ="Times" size="12">
+            <font weight="B" color="#4F81BD" font_name ="Times" size="13">
                 Firm:
             </font>
         </paragraph>
         <paragraph id="date" backgournd_color="#FFFFFF">
-            <font weight="B" color="#4F81BD" font_name ="Times" size="12">
+            <font weight="B" color="#4F81BD" font_name ="Times" size="13">
                 Date:
             </font>
         </paragraph>
