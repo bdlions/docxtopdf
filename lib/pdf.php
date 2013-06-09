@@ -67,7 +67,7 @@ class PDF extends FPDF {
             $borders = $col == 0?$borders.'L':$borders;
             $borders = $is_first_row == true? $borders.'T':$borders;
             
-            $this->Cell($col_data[$col]['cell_width'], $height, '', $borders, 0, 'C', true);
+            $this->Cell($col_data[$col]['cell_width'], $height, '', "RBLT", 0, 'C', true);
         }
 
         $this->SetXY($x, $y);
