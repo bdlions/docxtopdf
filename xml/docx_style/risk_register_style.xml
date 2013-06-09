@@ -10,7 +10,7 @@
             </font>
         </paragraph>
         <paragraph id="firm" backgournd_color="#FFFFFF">
-            <font weight="B" color="#4F81BD" font_name ="Times" size="13">
+            <font weight="B" color="#4F81BD" font_name ="Times" size="12">
                 Firm:
             </font>
         </paragraph>
@@ -21,8 +21,8 @@
         </paragraph>
      </paragraphs>
     <table>
-        <header backgournd_color="#00FFFF">
-            <font weight="BI" color="#000000" font_name="Times" size="12" text_align="C"></font>
+        <header backgournd_color="#4F81BD">
+            <font weight="B" color="#FFFFFF" font_name="Times" size="12" text_align="C"></font>
         </header>
         <alternateBackgroundColor odd-row="#D9D9D9" even-row="#FFFFFF"></alternateBackgroundColor>
         <row>
