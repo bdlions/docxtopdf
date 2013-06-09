@@ -153,11 +153,11 @@ class RiskRegisterPDF extends PDF {
             array_push($col_data, 
                     array('id' => SRA_RISK_ID, 'cell_width' => 14, 'cell_value' => $sra_riks_id, 'cell_style'=>  $this->getColumnStyleById(SRA_RISK_ID)), 
                     array('id' => DATE, 'cell_width' => 22, 'cell_value' => $date, 'cell_style'=>  $this->getColumnStyleById(DATE)), 
-                    array('id' => SOURCE_REGISTER, 'cell_width' => 22, 'cell_value' => $source_register, 'cell_style'=>  $this->getColumnStyleById(SOURCE_REGISTER)), 
+                    array('id' => SOURCE_REGISTER, 'cell_width' => 21, 'cell_value' => $source_register, 'cell_style'=>  $this->getColumnStyleById(SOURCE_REGISTER)), 
                     array('id' => PRACTICE_AREA, 'cell_width' => 24, 'cell_value' => $practice_area, 'cell_style'=>  $this->getColumnStyleById(PRACTICE_AREA)), 
                     array('id' => TRIGGER_EVENT, 'cell_width' => 22, 'cell_value' => $trigger_event, 'cell_style'=>  $this->getColumnStyleById(TRIGGER_EVENT)), 
-                    array('id' => COMPLIANCE_OFFICER, 'cell_width' => 24, 'cell_value' => $compliance_officer, 'cell_style'=>  $this->getColumnStyleById(COMPLIANCE_OFFICER)), 
-                    array('id' => ACTION_TAKEN, 'cell_width' => 35, 'cell_value' => $action_taken, 'cell_style'=>  $this->getColumnStyleById(ACTION_TAKEN)), 
+                    array('id' => COMPLIANCE_OFFICER, 'cell_width' => 23, 'cell_value' => $compliance_officer, 'cell_style'=>  $this->getColumnStyleById(COMPLIANCE_OFFICER)), 
+                    array('id' => ACTION_TAKEN, 'cell_width' => 37, 'cell_value' => $action_taken, 'cell_style'=>  $this->getColumnStyleById(ACTION_TAKEN)), 
                     array('id' => COMMENTS, 'cell_width' => 27, 'cell_value' => $comments, 'cell_style'=>  $this->getColumnStyleById(COMMENTS))
             );
             
