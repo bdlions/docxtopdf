@@ -63,8 +63,13 @@ class PDF extends FPDF {
         $y = $this->GetY();
 
         for ($col = 0; $col < count($col_data); $col++) {
-            $borders = 'BR';
-            
+            $borders = 'B';
+            if($is_first_row){
+                $borders = count($col_data) - 1 == $col?$borders.'R':$borders;
+            }
+            else{
+                $borders = $borders."R";
+            }
             $borders = $col == 0?$borders.'L':$borders;
             $borders = $is_first_row == true? $borders.'T':$borders;
             
@@ -82,7 +87,7 @@ class PDF extends FPDF {
         //To calculate the row_height we need to multiply max_height by 5
         //but I don't know why
         //I hv gotten it from a tutorial
-        return 5 * $max_height;
+        return (5 * $max_height) + 5;
     }
     function isPageBreakNeeded($height, $footer_height = 0) {
         //If the height would cause an overflow, 
