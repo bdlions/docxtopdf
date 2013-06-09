@@ -5,10 +5,10 @@
     $xml = new XMLParser();
     $pdf = new RiskRegisterPDF('L');
 
-    //$pdf->AddFont('calibri','', "calibri.php");
-    //$pdf->AddFont('calibri','I', "calibrii.php");
-    //$pdf->AddFont('calibri','B', "calibrib.php");
-    //$pdf->AddFont('calibri','BI', "calibriz.php");
+    $pdf->AddFont('calibri','', "calibri.php");
+    $pdf->AddFont('calibri','I', "calibrii.php");
+    $pdf->AddFont('calibri','B', "calibrib.php");
+    $pdf->AddFont('calibri','BI', "calibriz.php");
     
     $xml->load_file('xml/'.trim($_POST['xmlName']));
     $isvalid = $xml->validate_xml('schema/riskRegister.xsd');
