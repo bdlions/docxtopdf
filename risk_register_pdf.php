@@ -116,7 +116,7 @@ class RiskRegisterPDF extends PDF {
         $this->Cell(0, 30, "Risk Register", 0, 1);
         
         $style = array('width' => 0.4, 'color' => array(79,129,189));
-        $this->Line(10, 31, 208, 31, $style);
+        $this->Line(10, 31, 285, 31, $style);
 
         $this->SetXY($this->GetX(), 34);
         
@@ -151,14 +151,14 @@ class RiskRegisterPDF extends PDF {
 
             $col_data = array();
             array_push($col_data, 
-                    array('id' => SRA_RISK_ID, 'cell_width' => 14, 'cell_value' => $sra_riks_id, 'cell_style'=>  $this->getColumnStyleById(SRA_RISK_ID)), 
-                    array('id' => DATE, 'cell_width' => 22, 'cell_value' => $date, 'cell_style'=>  $this->getColumnStyleById(DATE)), 
-                    array('id' => SOURCE_REGISTER, 'cell_width' => 22, 'cell_value' => $source_register, 'cell_style'=>  $this->getColumnStyleById(SOURCE_REGISTER)), 
-                    array('id' => PRACTICE_AREA, 'cell_width' => 24, 'cell_value' => $practice_area, 'cell_style'=>  $this->getColumnStyleById(PRACTICE_AREA)), 
-                    array('id' => TRIGGER_EVENT, 'cell_width' => 22, 'cell_value' => $trigger_event, 'cell_style'=>  $this->getColumnStyleById(TRIGGER_EVENT)), 
-                    array('id' => COMPLIANCE_OFFICER, 'cell_width' => 24, 'cell_value' => $compliance_officer, 'cell_style'=>  $this->getColumnStyleById(COMPLIANCE_OFFICER)), 
-                    array('id' => ACTION_TAKEN, 'cell_width' => 35, 'cell_value' => $action_taken, 'cell_style'=>  $this->getColumnStyleById(ACTION_TAKEN)), 
-                    array('id' => COMMENTS, 'cell_width' => 27, 'cell_value' => $comments, 'cell_style'=>  $this->getColumnStyleById(COMMENTS))
+                    array('id' => SRA_RISK_ID, 'cell_width' => 15, 'cell_value' => $sra_riks_id, 'cell_style'=>  $this->getColumnStyleById(SRA_RISK_ID)), 
+                    array('id' => DATE, 'cell_width' => 30, 'cell_value' => $date, 'cell_style'=>  $this->getColumnStyleById(DATE)), 
+                    array('id' => SOURCE_REGISTER, 'cell_width' => 25, 'cell_value' => $source_register, 'cell_style'=>  $this->getColumnStyleById(SOURCE_REGISTER)), 
+                    array('id' => PRACTICE_AREA, 'cell_width' => 35, 'cell_value' => $practice_area, 'cell_style'=>  $this->getColumnStyleById(PRACTICE_AREA)), 
+                    array('id' => TRIGGER_EVENT, 'cell_width' => 45, 'cell_value' => $trigger_event, 'cell_style'=>  $this->getColumnStyleById(TRIGGER_EVENT)), 
+                    array('id' => COMPLIANCE_OFFICER, 'cell_width' => 35, 'cell_value' => $compliance_officer, 'cell_style'=>  $this->getColumnStyleById(COMPLIANCE_OFFICER)), 
+                    array('id' => ACTION_TAKEN, 'cell_width' => 50, 'cell_value' => $action_taken, 'cell_style'=>  $this->getColumnStyleById(ACTION_TAKEN)), 
+                    array('id' => COMMENTS, 'cell_width' => 40, 'cell_value' => $comments, 'cell_style'=>  $this->getColumnStyleById(COMMENTS))
             );
             
             //the height that we need to add new row
@@ -233,9 +233,9 @@ class RiskRegisterPDF extends PDF {
         
         $this->Image('images/'.$this->footer->src, $this->footer->x, $this->GetY(), $this->footer->size);
         // Arial italic 8
-        $this->SetFont('Arial', 'I', 8);
+        $this->SetFont('Times', '', 12);
         // Page number
-        $this->Cell(370, 10, 'Page ' . $this->PageNo() . ' of {nb}', 0, 0, 'C');
+        $this->Cell(530, 10, 'Page ' . $this->PageNo() . ' of {nb}', 0, 0, 'C');
     }
 
 }

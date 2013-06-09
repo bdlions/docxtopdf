@@ -3,7 +3,7 @@
     include 'risk_register_pdf.php';
 
     $xml = new XMLParser();
-    $pdf = new RiskRegisterPDF('P','mm','Letter');
+    $pdf = new RiskRegisterPDF('L');
 
     $pdf->AddFont('calibri','', "calibri.php");
     $pdf->AddFont('calibri','I', "calibrii.php");

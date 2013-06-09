@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document>
     <header>
-        <img src="header_logo.png" x="160" y ="8" size="40"></img>
+        <img src="header_logo.png" x="235" y ="8" size="50"></img>
     </header>
     <paragraphs>
         <paragraph id="risk_register" backgournd_color="#FFFFFF">
@@ -20,7 +20,7 @@
             </font>
         </paragraph>
      </paragraphs>
-    <table border_color="#000000" border_width="0.5">
+    <table border_color="#C2C2C2" border_width="0.5">
         <header backgournd_color="#4F81BD">
             <font weight="B" color="#FFFFFF" font_name="Times" size="12" text_align="C"></font>
         </header>
