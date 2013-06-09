@@ -13,16 +13,16 @@
     $style_parser->load_file('xml/docx_style/risk_register_style.xml');
     $isvalid_style = $style_parser->validate_xml('schema/docx_style/risk_register_style.xsd');
     
-    if(!$isvalid){
+    if($isvalid != true){
         print_r($isvalid);
-        die();
+        die("Validation error");
     }
-    if(!$isvalid_style){
+    if($isvalid_style != true){
         print_r($isvalid_style);
-        die();
+        die("validation erro");
     }
     
-    if ($isvalid === True && $isvalid_style) {
+    if ($isvalid === true && $isvalid_style == true) {
         $data = $xml->xml_to_array();
         $styles = $style_parser->xml_to_array();
         
@@ -33,6 +33,10 @@
         $pdf->Output();
         
     } 
+    else{
+        echo  "validation erro:" ;
+        print_r($isvalid);
+    }
     
 ?>
 
