@@ -23,9 +23,9 @@ class Table {
         if($table){
             $this->header = new TableHeader( $table[HEADER] );
             $this->alternateRowBackColor = new AlternateRowBackColor($table[ALTERNATE_BACKGROUND_COLOR]);
-            $this->cols = $table[ROW][COLUMNS];
+            $this->cols = $table[ROW][COLUMNS];          
             $this->border_color = $table['border_color'];
-            $this->border_color = $table['border_width'];
+            $this->border_widht = $table['border_width'];
         }
     }
 }
