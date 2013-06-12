@@ -25,9 +25,7 @@
     if($isvalid_style != true){
         print_r($isvalid_style);
         //die("validation erro");
-    }
-    
-    if ($isvalid === true && $isvalid_style == true) {
+    }else{
         $data = $xml->xml_to_array();
         $styles = $style_parser->xml_to_array();
         
@@ -38,10 +36,7 @@
         $pdf->Output();
         
     } 
-    else{
-        echo  "validation erro:" ;
-        print_r($isvalid);
-    }
+    
     
 ?>
 
