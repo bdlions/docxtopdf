@@ -228,6 +228,7 @@ class PDF extends FPDF {
                     //print_r("Assumed Height". $assumedLineHeight. " Footer Height: ".$footer_height. " Current page size: ". $this->CurPageSize[ 0 ]. "<br/>");
                     
                     //if($this->isPageBreakNeeded($assumedLineHeight, $footer_height)){
+
                     $multiplier = 3;
                     if ($this->PageNo() == 1) {
                         $multiplier = 1;
@@ -237,6 +238,7 @@ class PDF extends FPDF {
 
                         $first_row[$i][$key] = $strs[0];
                         $second_row[$i][$key] = $strs [1];
+
 
                         $is_splitting_possible = true;
                     }
@@ -265,11 +267,13 @@ class PDF extends FPDF {
             $first_string = $first_string. $string_pieces[ $i ] . " ";
             $no_of_lines = $this->noOfLines($col['cell_width'], $first_string);
             $assumedLineHeight = $no_of_lines * 5 + 5;
+
             $multiplier = 3;
             if ($this->PageNo() == 1) {
                 $multiplier = 1;
             }
             if($this->GetY() + $assumedLineHeight +  $multiplier * $footer_height > $this->CurPageSize[ 0 ]){
+
                 break;
             }
        }
