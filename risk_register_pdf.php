@@ -163,48 +163,46 @@ class RiskRegisterPDF extends PDF {
             
             //the height that we need to add new row
             $row_height = $this->getEssentialRowHeight($col_data);
-
+            //print_r("Max Row height: ".$row_height. "</br>");
+            
             //Issue a page break first if needed
-            if($this->isPageBreakNeeded($row_height, $this->footer_height)){
+            if($this->isPageBreakNeeded($row_height, $this->footer_height) && $this->page_first_row != true){
                 $this->addPageBreak($row_height, $this->header_height, $this->footer_height);
                 $this->page_first_row = true;
             }
             
             if($this->page_first_row == true){
-                $this->colorConverter->convertHex2RGB($this->table->header->background_color);
-                $style = array('width' => $this->table->border_width, 'color' => array($this->colorConverter->r, $this->colorConverter->g, $this->colorConverter->b));
-                $this->SetLineStyle($style);
                 
-                $this->addTableHeader($this->table->header, $col_data);
+                $this->addTableHeader($this->table->header,  $this->table, $col_data);
+                $row_height = $this->getEssentialRowHeight($col_data);
+           
+                if($this->isPageBreakNeeded($row_height, $this->footer_height)){
+                    
+                    $is_splitting_possible = $this->splitRow($col_data, $this->footer_height);
+                    $this->addRow($is_splitting_possible[ 0 ], $row_count, $this->table);
+                    
+                    while($is_splitting_possible [ 1 ]){
+                        $this->addPageBreak($row_height, $this->header_height, $this->footer_height);
+                        //$this->addTableHeader($this->table->header,  $this->table, $col_data);
+                        $is_splitting_possible = $this->splitRow($is_splitting_possible [ 1 ], $this->footer_height);
+                        $this->addRow($is_splitting_possible[ 0 ], $row_count, $this->table);
+                    }
+                }
+                else{
+                    $this->addRow($col_data, $row_count, $this->table);
+                }
+                
                 $this->page_first_row = false;
             }
-            
-            $this->colorConverter->convertHex2RGB($this->table->border_color);
-            $style = array('width' => $this->table->border_width, 'color' => array($this->colorConverter->r, $this->colorConverter->g, $this->colorConverter->b));
-            $this->SetLineStyle($style);
-            
-            
-            if($row_count % 2 == 0){
-                $this->colorConverter->convertHex2RGB($this->table->alternateRowBackColor->even_row_color);
-                $this->SetFillColor($this->colorConverter->r, $this->colorConverter->g, $this->colorConverter->b);
-            }
             else{
-                $this->colorConverter->convertHex2RGB($this->table->alternateRowBackColor->odd_row_color);
-                $this->SetFillColor($this->colorConverter->r, $this->colorConverter->g, $this->colorConverter->b);
+                //drawing data and set next line
+                $this->addRow($col_data, $row_count, $this->table);
             }
-            //drawing data into the cell and get the maximum row height
-            $fill_height = $this->getRowHeightByFillData($col_data);
-            //filling the cell with background color that overlaps the data 
-            //those are drawn before
-            //now we have to draw the data again
-            $this->fillBackGroundColor($col_data, $fill_height, $this->page_first_row);
-            //drawing data and set next line
-            $this->addRow($col_data);
             $row_count ++;
             
         }
     }
-    
+     
     function getColumnStyleById($id){
         foreach ($this->table->cols as $value) {
             if($value['id'] == $id){

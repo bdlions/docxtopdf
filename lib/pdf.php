@@ -11,9 +11,9 @@ class PDF extends FPDF {
     function __construct($orientation='P', $unit='mm', $size='A3') {
         parent::__construct($orientation, $unit, $size);
     }
-    function NbLines($w, $txt) {
+    function noOfLines($w, $txt) {
         //Computes the number of lines a MultiCell of width w will take
-        $cw = &$this->CurrentFont['cw'];
+        $cw = &$this->CurrentFont['cw'];//print_r( $cw);
         if ($w == 0)
             $w = $this->w - $this->rMargin - $this->x;
         $wmax = ($w - 2 * $this->cMargin) * 1000 / $this->FontSize;
@@ -28,12 +28,13 @@ class PDF extends FPDF {
         $nl = 1;
         while ($i < $nb) {
             $c = $s[$i];
+            //print_r($c);//echo "</br>";
             if ($c == "\n") {
                 $i++;
                 $sep = -1;
                 $j = $i;
                 $l = 0;
-                $nl++;
+                $nl++;//echo "Current Line: ". $nl. "<br/>";
                 continue;
             }
             if ($c == ' ')
@@ -50,10 +51,15 @@ class PDF extends FPDF {
                 $j = $i;
                 $l = 0;
                 $nl++;
+                //echo "<br/>Current Line: ". $nl. "<br/>";
             }
             else
                 $i++;
+            //echo "Current Line: ". $nl. " ";
+            //echo "</br>Value of : ".$i. "<br/>";
         }
+        //echo "No of lines: ".$nl." ";
+        //echo $s . "</br>";
         return $nl;
     }
 
@@ -75,9 +81,9 @@ class PDF extends FPDF {
     function getEssentialRowHeight($col_data) {
         $max_height = 0;
         for ($i = 0; $i < count($col_data); $i++) {
-            $max_height = max($max_height, $this->NbLines($col_data[$i]['cell_width'], $col_data[$i]['cell_value']));
+            $max_height = max($max_height, $this->noOfLines($col_data[$i]['cell_width'], $col_data[$i]['cell_value']));
         }
-
+        //echo "Max Height: ". $max_height."<br/>";
         //To calculate the row_height we need to multiply max_height by 5
         //but I don't know why
         //I hv gotten it from a tutorial
@@ -131,13 +137,31 @@ class PDF extends FPDF {
         return $maxRowHeight;
     }
 
-    function addRow($col_data) {
+    function addRow($col_data, $row_index, $table_style) {
+        $this->colorConverter->convertHex2RGB($table_style->border_color);
+        $style = array('width' => $table_style->border_width, 'color' => array($this->colorConverter->r, $this->colorConverter->g, $this->colorConverter->b));
+        $this->SetLineStyle($style);
+            
+        if ($row_index % 2 == 0) {
+            $this->colorConverter->convertHex2RGB($table_style->alternateRowBackColor->even_row_color);
+            $this->SetFillColor($this->colorConverter->r, $this->colorConverter->g, $this->colorConverter->b);
+        } else {
+            $this->colorConverter->convertHex2RGB($table_style->alternateRowBackColor->odd_row_color);
+            $this->SetFillColor($this->colorConverter->r, $this->colorConverter->g, $this->colorConverter->b);
+        }
+        
+        //drawing data into the cell and get the maximum row height
+        $fill_height = $this->getRowHeightByFillData($col_data);
+        //filling the cell with background color that overlaps the data 
+        //those are drawn before
+        //now we have to draw the data again
+        $this->fillBackGroundColor($col_data, $fill_height, $this->page_first_row);
         $maxRowHeight = $this->getRowHeightByFillData($col_data);
         $this->Ln($maxRowHeight);
     }
 
     function calTHeaderHeightAndSetText($style, $col_data){
-                $start_x_pos = $this->GetX();
+        $start_x_pos = $this->GetX();
         $start_y_pos = $this->GetY();
 
         $x = $this->GetX();
@@ -151,8 +175,8 @@ class PDF extends FPDF {
             $borders = "";
             //$borders = 'LB' . ($col + 1 == count($col_data) ? 'R' : ''); // Only add R for last col
             //$column_style = new Column($col_data[$col]['cell_style']);
-            
-            $this->SetFont($style->font_family, $style->font_weight, $style->font_size);
+           
+            //$this->SetFont($style->font_family, $style->font_weight, $style->font_size);
             $this->colorConverter->convertHex2RGB($style->font_color);
             $this->SetTextColor($this->colorConverter->r, $this->colorConverter->g, $this->colorConverter->b);
         
@@ -171,7 +195,12 @@ class PDF extends FPDF {
         return $maxRowHeight;
     }
     
-    function addTableHeader($style, $col_data) {
+    function addTableHeader($style, $table_style, $col_data) {
+        
+        $this->colorConverter->convertHex2RGB($style->background_color);
+        $line_style = array('width' => $table_style->border_width, 'color' => array($this->colorConverter->r, $this->colorConverter->g, $this->colorConverter->b));
+        $this->SetLineStyle($line_style);
+        
         $maxRowHeight = $this->calTHeaderHeightAndSetText($style, $col_data);
         $this->fillBackGroundColor($col_data, $maxRowHeight, true);
         $this->calTHeaderHeightAndSetText($style, $col_data);
@@ -183,6 +212,80 @@ class PDF extends FPDF {
         return isset($obj[$name]) == true ? is_array($obj[$name]) == true ? "" : $obj[$name]  : "";
     }
     
+    function splitRow($col, $footer_height){
+        //$col = new Column($col);
+        $is_splitting_possible = false;
+        $rows = array();
+        $first_row = $col;
+        $second_row = $col;
+        
+        for($i = 0; $i < count($col); $i ++){
+            foreach ($col[$i] as $key => $value) {
+                if($key == 'cell_value'){
+                    $no_of_lines = $this->noOfLines($col[$i]['cell_width'], $value);
+                    $assumedLineHeight = $no_of_lines * 5 + 5;
+                    
+                    //print_r("Assumed Height". $assumedLineHeight. " Footer Height: ".$footer_height. " Current page size: ". $this->CurPageSize[ 0 ]. "<br/>");
+                    
+                    //if($this->isPageBreakNeeded($assumedLineHeight, $footer_height)){
+                    $multiplier = 3;
+                    if ($this->PageNo() == 1) {
+                        $multiplier = 1;
+                    }
+                    if ($this->GetY() + $assumedLineHeight + 2 * $footer_height > $this->CurPageSize[0]) {
+                        $strs = $this->splitString($col[$i], $footer_height);
+
+                        $first_row[$i][$key] = $strs[0];
+                        $second_row[$i][$key] = $strs [1];
+
+                        $is_splitting_possible = true;
+                    }
+                    else{
+                        $second_row[ $i ][$key ] = "";
+                    }
+                }
+            }
+        }
+        if($is_splitting_possible){
+            array_push($rows, $first_row, $second_row);
+        }
+        else{
+            array_push($rows, $first_row, false);
+        }
+        return $rows;
+    }
+    
+    function splitString($col, $footer_height){
+       $string_pieces = explode(" ", $col['cell_value']);
+       
+       $first_string = "";
+       $second_string = "";
+       
+       for($i = 0; $i < count($string_pieces); $i ++){
+            $first_string = $first_string. $string_pieces[ $i ] . " ";
+            $no_of_lines = $this->noOfLines($col['cell_width'], $first_string);
+            $assumedLineHeight = $no_of_lines * 5 + 5;
+            $multiplier = 3;
+            if ($this->PageNo() == 1) {
+                $multiplier = 1;
+            }
+            if($this->GetY() + $assumedLineHeight +  $multiplier * $footer_height > $this->CurPageSize[ 0 ]){
+                break;
+            }
+       }
+       
+       for($j = $i + 1; $j < count($string_pieces); $j ++){
+           $second_string = $second_string. " ".$string_pieces[ $j ];
+       }
+       
+       $strs = array();
+       
+       $first_string = trim($first_string);
+       $second_string = trim($second_string);
+       
+       array_push($strs, $first_string, $second_string);
+       return $strs;
+    }
     
         // Sets line style
     // Parameters:

@@ -171,7 +171,7 @@ class XMLParser {
         if (!$xml->schemaValidate($schema)) { 
             return $this->_libxml_display_errors(); 
         } else { 
-            return True;
+            return true;
         } 
     }
 }
