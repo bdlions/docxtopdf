@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document>
     <header>
-        <img src="header_logo.png" x="235" y ="8" size="50"></img>
+        <img src="header_logo.png" x="235" y ="8" width="50" height="8"></img>
     </header>
     <paragraphs>
         <paragraph id="risk_register" backgournd_color="#FFFFFF">
@@ -55,6 +55,6 @@
         </row>
     </table>
     <footer>
-        <img src="footer_logo.png" x="10" y ="-15" size="30"></img>
+        <img src="footer_logo.png" x="10" y ="-15" width="30" height="5"></img>
     </footer>
 </document>
