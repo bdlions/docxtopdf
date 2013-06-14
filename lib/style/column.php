@@ -19,7 +19,7 @@ class Column {
     var $font_size = 12;
     var $text_align = "L";
     
-    public function __construct($col){
+    public function __construct($col = null){
         $this->id = $col['id'];
         $this->header_text = $col['header_text'];
         $this->font_weight = $col['font']['weight'];

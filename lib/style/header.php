@@ -15,14 +15,16 @@ class Header {
     var $src;
     var $x;
     var $y;
-    var $size;
+    var $width;
+    var $height;
     
-    public function __construct($header){
+    public function __construct($header = null){
         if($header){
             $this->src = $header['img']['src'];
             $this->x = $header['img']['x'];
             $this->y = $header['img']['y'];
-            $this->size = $header['img']['size'];
+            $this->width = $header['img']['width'];
+            $this->height = $header['img']['height'];
         }
     }
 }

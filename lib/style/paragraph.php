@@ -19,7 +19,7 @@ class Paragraph {
     var $font_family = "Times";
     var $font_size = 10;
     
-    public function __construct($p){
+    public function __construct($p = null){
         if($p){
             $this->id = $p['id'];
             $this->background_color = $p['backgournd_color'];
