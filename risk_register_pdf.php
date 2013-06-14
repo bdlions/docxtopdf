@@ -33,13 +33,13 @@ class RiskRegisterPDF extends PDF {
     function __construct($orientation='P', $unit='mm', $size='A4') {
         parent::__construct($orientation, $unit, $size);
         
-        $this->header = new Header(null);
-        $this->footer = new Footer(null);
-        $this->table = new Table(null);
+        $this->header = new Header();
+        $this->footer = new Footer();
+        $this->table = new Table();
         
-        $this->risk_register_para = new Paragraph(null);
-        $this->firm_para = new Paragraph(null);
-        $this->date_para= new Paragraph(null);
+        $this->risk_register_para = new Paragraph();
+        $this->firm_para = new Paragraph();
+        $this->date_para= new Paragraph();
         $this->colorConverter = new ColorConverter();
         
         
@@ -211,14 +211,14 @@ class RiskRegisterPDF extends PDF {
         }
         return false;
     }
-
+    
     // Page header
     function Header() {
         // Move to the right
         $this->Cell(80);
         // Logo
         //image(filename, x, y, width)
-        $this->Image('images/'.$this->header->src, $this->header->x, $this->header->y, $this->header->size);
+        $this->Image('images/'.$this->header->src, $this->header->x, $this->header->y, $this->header->width);
         $this->Ln();
     }
 
@@ -229,7 +229,7 @@ class RiskRegisterPDF extends PDF {
         // Logo
         //image(filename, x, y, width)
         
-        $this->Image('images/'.$this->footer->src, $this->footer->x, $this->GetY(), $this->footer->size);
+        $this->Image('images/'.$this->footer->src, $this->footer->x, $this->GetY(), $this->footer->width);
         // Arial italic 8
         $this->SetFont('Times', '', 12);
         // Page number

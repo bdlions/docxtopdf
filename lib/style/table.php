@@ -19,7 +19,7 @@ class Table {
     var $border_color = "#000000";
     var $border_width = 0.4;
     
-    public function __construct( $table){
+    public function __construct( $table = null){
         if($table){
             $this->header = new TableHeader( $table[HEADER] );
             $this->alternateRowBackColor = new AlternateRowBackColor($table[ALTERNATE_BACKGROUND_COLOR]);

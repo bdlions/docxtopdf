@@ -15,7 +15,7 @@ class AlternateRowBackColor {
      var $odd_row_color = "#FFFFFF";
      var $even_row_color = "#FFFFFF";
      
-     function __construct($alternateRowProperty){
+     function __construct($alternateRowProperty = null){
          
          if($alternateRowProperty){
             $this->odd_row_color = $alternateRowProperty['odd-row'];

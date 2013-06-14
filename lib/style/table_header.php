@@ -18,7 +18,7 @@ class TableHeader {
     var $font_family = "Times";
     var $font_size = 12;
     var $text_align = "C";
-    public function __construct($header){
+    public function __construct($header = null){
         if(!is_object($header)){
             $this->background_color = $header['backgournd_color'];
             $this->font_weight = $header[FONT]['weight'];
