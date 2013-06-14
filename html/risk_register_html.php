@@ -89,11 +89,11 @@ class RiskRegisterHTML {
         ".header_logo{height: ".($this->header->height * 6)."px; "."width: ".($this->header->width * 6)."px;}".
         ".footer{padding-top:30px; height: ".($this->footer->height * 6)."px; "."width: ".($this->footer->width * 6)."px;}".
         "hr{color: #4F81BD;}".
-        ".risk_register{font-weight: {$this->risk_register_para->font_weight}; font-size: {$this->risk_register_para->font_size}px; color: {$this->risk_register_para->font_color};font-family: {$this->risk_register_para->font_family};}".
-        ".firm{font-weight: {$this->getActualFontWeight($this->firm_para->font_weight)}; font-size: {$this->firm_para->font_size}px; color: {$this->firm_para->font_color};font-family: {$this->firm_para->font_family};}".
-        ".date{font-weight: {$this->getActualFontWeight($this->date_para->font_weight)}; font-size: {$this->date_para->font_size}px; color: {$this->date_para->font_color};font-family: {$this->date_para->font_family};}".
+        ".risk_register{font-weight: {$this->risk_register_para->font_weight}; font-size: {$this->risk_register_para->font_size}pt; color: {$this->risk_register_para->font_color};font-family: {$this->risk_register_para->font_family};}".
+        ".firm{font-weight: {$this->getActualFontWeight($this->firm_para->font_weight)}; font-size: {$this->firm_para->font_size}pt; color: {$this->firm_para->font_color};font-family: {$this->firm_para->font_family};}".
+        ".date{font-weight: {$this->getActualFontWeight($this->date_para->font_weight)}; font-size: {$this->date_para->font_size}pt; color: {$this->date_para->font_color};font-family: {$this->date_para->font_family};}".
         ".main_container{min-height:400px;height:auto;}".
-        "th{background-color:{$this->table->header->background_color}; border: solid {$this->table->border_width}px {$this->table->header->background_color}; font-weight: {$this->getActualFontWeight($this->table->header->font_weight)}; font-size: {$this->table->header->font_size}px; color: {$this->table->header->font_color}; text-align: {$this->getActualTextAlign($this->table->header->text_align)}}".
+        "th{background-color:{$this->table->header->background_color}; border: solid {$this->table->border_width}px {$this->table->header->background_color}; font-weight: {$this->getActualFontWeight($this->table->header->font_weight)}; font-size: {$this->table->header->font_size}pt; color: {$this->table->header->font_color}; text-align: {$this->getActualTextAlign($this->table->header->text_align)}}".
         "table{border-collapse:collapse; table-layout:fixed; width:900px;}".
         ".tr0{background-color:{$this->table->alternateRowBackColor->odd_row_color}}".
         ".tr1{background-color:{$this->table->alternateRowBackColor->even_row_color}}".
