@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document>
     <header>
-        <img src="header_logo.png" x="235" y ="8" width="50" height="8"></img>
+        <img src="header_logo.png" x="235" y ="8" width="50" height="8" ></img>
     </header>
     <paragraphs>
         <paragraph id="risk_register" backgournd_color="#FFFFFF">
